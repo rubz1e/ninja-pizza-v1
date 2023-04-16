@@ -1,0 +1,36 @@
+$container-width: 90%;
+$background: #ffdf8c;
+// Ацкентный
+$primaryGreen: #00cc2d;
+$primaryOrange: #ff6633;
+
+// Текст
+$grayFirst: #686870;
+$graySecond: #86868b;
+$grayThird: #9e9e9e;
+
+// Цветные
+$black: #1d1d1f;
+$yellow: #ffc700;
+$red: #f44837;
+$green: #55b20b;
+$white: #ffffff;
+
+// Разделитель
+$dividerFirst: #d2d2d7;
+$dividerSecond: #ededed;
+$dividerThird: #f5f5f5;
+
+// Фон
+$bgGray: #f5f5f7;
+$bgInput: #f5f5f7;
+$bgTransparentFirst: rgba(39, 39, 39, 0.1);
+$bgTransparentSecond: rgba(39, 39, 39, 0.05);
+//Цветные фоны
+$bgYellow: #fef7ed;
+$bgOrange: #fbdcd5;
+$bgGreen: #ccf5d5;
+
+// Ховер
+$hoverOrange: #ff6633;
+$hoverGreen: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #00cc2d;

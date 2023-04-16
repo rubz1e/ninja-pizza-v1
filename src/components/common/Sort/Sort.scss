@@ -1,4 +1,4 @@
-@import './../variables';
+@import '../../../scss/variables';
 
 .sort {
   position: relative;
@@ -15,8 +15,8 @@
     }
 
     span {
-      color: $primaryOrange;
-      border-bottom: 1px dashed $primaryOrange;
+      color: $orange;
+      border-bottom: 1px dashed $orange;
       cursor: pointer;
     }
   }
@@ -45,7 +45,7 @@
 
         &.active {
           font-weight: bold;
-          color: $primaryOrange;
+          color: $orange;
         }
       }
     }
