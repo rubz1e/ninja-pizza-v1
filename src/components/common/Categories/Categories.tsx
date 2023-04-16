@@ -2,34 +2,41 @@ import React from 'react';
 
 import './Categories.scss';
 
+import Alls from '../../../assets/categories/pizza2x.webp';
 import Spicy from '../../../assets/categories/spicyFilter.png';
 import Meat from '../../../assets/categories/meatFilter.png';
 import WithoutMeat from '../../../assets/categories/withoutMeatFilter.png';
 import Fish from '../../../assets/categories/fishFilter.png';
 
 export default function Categories() {
-  const [isActiveIndex, setIsActiveIndex] = React.useState(Boolean);
+  const [isActiveIndex, setIsActiveIndex] = React.useState(0);
+
+  const categories = [
+    { type: 'Все', img: Alls },
+    { type: 'Острые', img: Spicy },
+    { type: 'Мясные', img: Meat },
+    { type: 'Вегетарианские', img: WithoutMeat },
+    { type: 'Морепродукты', img: Fish },
+  ];
+
+  const onClickCategories = (index: React.SetStateAction<number>) => {
+    setIsActiveIndex(index);
+  };
 
   return (
     <div className='categories'>
       <div className='wrapper'>
         <ul>
-          <li className='active '>
-            <img src={Spicy} alt='' />
-            <p>Острые</p>
-          </li>
-          <li>
-            <img src={Meat} alt='' />
-            <p>Мясные</p>
-          </li>
-          <li>
-            <img src={WithoutMeat} alt='' />
-            <p>Вегетарианские</p>
-          </li>
-          <li>
-            <img src={Fish} alt='' />
-            <p>Морепродукты</p>
-          </li>
+          {categories.map((category, index) => (
+            <li
+              key={index}
+              onClick={() => onClickCategories(index)}
+              className={isActiveIndex === index ? 'active' : ''}
+            >
+              <img src={category.img} alt={category.img} />
+              <p>{category.type}</p>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
