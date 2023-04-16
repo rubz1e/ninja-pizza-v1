@@ -12,6 +12,8 @@ import Android from '../../../assets/banners/android1270ua.webp';
 import Legend from '../../../assets/banners/legend.jpg';
 
 export default function Carousel() {
+  const data = [{ img: News }, { img: NewDel }, { img: NewNews }, { img: Android }, { img: Legend }];
+
   return (
     <Swiper
       centeredSlides={true}
@@ -22,21 +24,11 @@ export default function Carousel() {
       modules={[Pagination]}
       className='mySwiper'
     >
-      <SwiperSlide>
-        <img src={News} alt='' />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src={NewDel} alt='' />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src={NewNews} alt='' />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src={Android} alt='' />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src={Legend} alt='' />
-      </SwiperSlide>
+      {data.map((slide, index) => (
+        <SwiperSlide key={index}>
+          <img src={slide.img} alt={slide.img} />
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 }
