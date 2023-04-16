@@ -6,24 +6,36 @@
 
     li {
       background-color: #f9f9f9;
-      padding: 13px 30px;
+      display: flex;
+      align-items: center;
+      padding: 13px 25px;
       border-radius: 30px;
       margin-right: 10px;
       font-weight: bold;
       cursor: pointer;
       transition: background-color 0.1s ease-in-out;
+      gap: 10px;
+      border: 1px solid #f9f9f9;
 
       &:hover {
         background-color: darken(#f9f9f9, 2%);
+        border: 1px solid darken(#f9f9f9, 2%);
       }
 
       &:active {
         background-color: darken(#f9f9f9, 5%);
+        border: 1px solid darken(#f9f9f9, 5%);
       }
 
       &.active {
-        background-color: #282828;
+        background-color: $white;
         color: #fff;
+        border: 1px solid #ff6633;
+      }
+
+      img {
+        width: 30px;
+        height: 30px;
       }
     }
   }
