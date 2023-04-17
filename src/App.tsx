@@ -1,16 +1,14 @@
 import './scss/app.scss';
 
 import Header from './components/common/Header/Header';
-// import Categories from './components/common/Categories/Categories';
-import Carousel from './components/common/Carousel/Carousel';
+import Home from './components/page/Main/Home';
 
 function App() {
   return (
     <div className='App'>
       <Header />
       <main className='main_content'>
-        <Carousel />
-        {/* <Categories /> */}
+        <Home />
       </main>
     </div>
   );

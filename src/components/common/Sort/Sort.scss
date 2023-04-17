@@ -2,7 +2,7 @@
 
 .sort {
   position: relative;
-  &__label {
+  &_label {
     display: flex;
     align-items: center;
 
@@ -15,37 +15,38 @@
     }
 
     span {
-      color: $orange;
-      border-bottom: 1px dashed $orange;
+      color: $primaryOrange;
+      border-bottom: 1px solid $primaryOrange;
       cursor: pointer;
+      font-weight: bold;
     }
   }
 
-  &__popup {
-    position: absolute;
-    right: 0;
+  &_popup {
     margin-top: 15px;
     background: #ffffff;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
     border-radius: 10px;
     overflow: hidden;
-    padding: 10px 0;
+    padding: 5px;
     width: 160px;
 
     ul {
       overflow: hidden;
+      border-radius: 10px;
       li {
         padding: 12px 20px;
         cursor: pointer;
-
+        border-radius: 10px;
+        margin: 5px 0;
         &.active,
         &:hover {
-          background: rgba(254, 95, 30, 0.05);
+          background: $bgYellow;
         }
 
         &.active {
           font-weight: bold;
-          color: $orange;
+          color: $primaryOrange;
         }
       }
     }
