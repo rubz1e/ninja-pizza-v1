@@ -1,0 +1,7 @@
+@import '../variables';
+
+@mixin fontH1 {
+  font-size: 48px;
+  color: $black;
+  font-weight: 800;
+}

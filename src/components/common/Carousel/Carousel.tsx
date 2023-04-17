@@ -27,8 +27,8 @@ export default function Carousel() {
         className='swiper-container'
       >
         {data.map((slide, index) => (
-          <SwiperSlide key={index} className='slider__slide'>
-            <div className='slider__image'>
+          <SwiperSlide key={index} className='slider-slide'>
+            <div className='slider-image'>
               <img src={slide.img} alt={slide.img} />
             </div>
           </SwiperSlide>

@@ -9,19 +9,15 @@ export interface NinjaPizza {
   price: number;
   category: number[];
   rating: number;
+  newProduct?: boolean;
 }
 
-export interface CategoryType {
-  pizza: string;
-  drinks: string;
-  desserts: string;
-  supplements: string;
-}
+export type CategoryType = 'pizza' | 'drinks' | 'desserts' | 'supplements';
 
 export interface CategoryFilterType {
-  sortField: string;
-  sortDir: string;
-  query: string;
-  limit: string;
-  page: string;
+  sortField?: string;
+  sortDir?: string;
+  query?: string;
+  limit?: string;
+  page?: string;
 }

@@ -15,14 +15,14 @@ export default function Sort() {
 
   return (
     <div className='sort'>
-      <div className='sort_wrapper'>
-        <div className='sort_label'>
+      <div className='sort-wrapper'>
+        <div className='sort-label'>
           <Arrow />
           <b>Сортировка по:</b>
           <span onClick={() => setIsOpen(!isOpen)}>{sortNames}</span>
         </div>
         {isOpen && (
-          <div className='sort_popup'>
+          <div className='sort-popup'>
             <ul>
               {categories.map((category, index) => (
                 <li key={index} onClick={() => onClickSelected(index)} className={isSelecte === index ? 'active' : ''}>

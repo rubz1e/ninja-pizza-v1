@@ -22,7 +22,7 @@
     }
   }
 
-  &_popup {
+  &-popup {
     margin-top: 15px;
     background: #ffffff;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
@@ -30,7 +30,8 @@
     overflow: hidden;
     padding: 5px;
     width: 160px;
-
+    position: absolute;
+    z-index: 5;
     ul {
       overflow: hidden;
       border-radius: 10px;

@@ -1,9 +1,6 @@
 @import '../../../scss/variables';
 
 .swiper {
-  &-container {
-  }
-
   &-slide {
     & img {
       max-width: 100%;
@@ -32,11 +29,11 @@
 }
 
 .slider {
-  &__image {
+  &-image {
     width: 100%;
   }
 
-  &__slie {
+  &-slie {
     display: flex;
     align-items: center;
     width: 100% !important;

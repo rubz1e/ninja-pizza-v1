@@ -10,43 +10,43 @@ export default function Header() {
   return (
     <div className='header'>
       <div className='wrapper'>
-        <div className='header_content'>
-          <div className='header_left'>
-            <div className='header_logo'>
+        <div className='header-content'>
+          <div className='header-left'>
+            <div className='header-logo'>
               <a href='/'>
                 <Logo />
               </a>
             </div>
-            <div className='header_navigation'>
-              <ul className='nav_item'>
-                <li className='nav_item--list'>
+            <div className='header-navigation'>
+              <ul className='nav-item'>
+                <li className='nav-item__list'>
                   <a href='/'>Главная</a>
                 </li>
-                <li className='nav_item--list'>
+                <li className='nav-item__list'>
                   <a href='/'>Меню</a>
                 </li>
-                <li className='nav_item--list'>
+                <li className='nav-item__list'>
                   <a href='/'>Клиентам</a>
                 </li>
-                <li className='nav_item--list'>
+                <li className='nav-item__list'>
                   <a href='/'>Новости</a>
                 </li>
               </ul>
             </div>
           </div>
-          <div className='header_right'>
-            <div className='header_info'>
-              <a className='header_info-phone' href='tel:+38 (067) 579 69 75'>
+          <div className='header-right'>
+            <div className='header-info'>
+              <a className='header-info__phone' href='tel:+38 (067) 579 69 75'>
                 <Phone width='24' height='24' />
                 <p className=''>+38 (067) 579 69 75</p>
               </a>
-              <a href='/' className='header_info-favorite'>
+              <a href='/' className='header-info__favorite'>
                 <Favorite width='24' height='24' />
               </a>
-              <a href='/' className='header_info-private'>
+              <a href='/' className='header-info__private'>
                 <Private width='24' height='24' />
               </a>
-              <a href='/' className='header_info-cart'>
+              <a href='/' className='header-info__cart'>
                 <Magazine width='24' height='24' />
               </a>
             </div>

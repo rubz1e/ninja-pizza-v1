@@ -1,0 +1,66 @@
+@import '../../../scss/variables';
+@import '../../../scss/components/all';
+
+.home {
+  &-about {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 72px;
+    &__wrapper {
+      margin: 0 auto;
+    }
+    &__h1 {
+      @include fontH1;
+    }
+    &__description {
+      max-width: 545px;
+      margin-top: 24px;
+      color: $black;
+      font-weight: 500;
+    }
+  }
+  &-content {
+    margin-top: 104px;
+  }
+}
+
+.product {
+  &-list {
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    &__top {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      @include fontH1;
+    }
+    &__wrapper {
+      width: 100%;
+      margin: 0 auto;
+      max-width: 1300px;
+      padding: 0 15px;
+    }
+    &__content {
+      margin-top: 32px;
+    }
+    &__temp {
+      display: grid;
+      grid-gap: 4px;
+      grid-template-columns: repeat(auto-fill, minmax(314px, 1fr));
+    }
+    &__bottom {
+      margin: 0 auto;
+    }
+    &__button {
+      margin: 50px 0;
+      @include button;
+      background-color: $gray;
+      color: $white;
+    }
+  }
+}
