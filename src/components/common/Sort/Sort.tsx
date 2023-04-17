@@ -17,9 +17,11 @@ export default function Sort() {
     <div className='sort'>
       <div className='sort-wrapper'>
         <div className='sort-label'>
-          <Arrow />
-          <b>Сортировка по:</b>
-          <span onClick={() => setIsOpen(!isOpen)}>{sortNames}</span>
+          <b>Сортировка по: </b>
+          <div className='sort-label_name' onClick={() => setIsOpen(!isOpen)}>
+            <span className='sort-open'>{sortNames}</span>
+            <Arrow />
+          </div>
         </div>
         {isOpen && (
           <div className='sort-popup'>

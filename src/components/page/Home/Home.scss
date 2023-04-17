@@ -2,6 +2,14 @@
 @import '../../../scss/components/all';
 
 .home {
+  &-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-bottom: 500px;
+  }
   &-about {
     display: flex;
     flex-direction: column;

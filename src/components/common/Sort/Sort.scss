@@ -1,45 +1,54 @@
 @import '../../../scss/variables';
 
 .sort {
-  position: relative;
-  &_label {
+  &-label {
     display: flex;
     align-items: center;
 
-    svg {
-      margin-right: 8px;
+    &_name {
+      display: flex;
+      width: 200px;
+      padding: 18px 25px;
+      background-color: #f9f9f9;
+      border-radius: 30px;
+      justify-content: space-between;
+      cursor: pointer;
+      align-items: center;
+
+      svg {
+        margin-right: 8px;
+      }
+      span {
+        display: flex;
+        justify-content: center;
+        border-radius: 30px;
+        position: relative;
+        color: $primaryOrange;
+        font-weight: bold;
+      }
     }
 
     b {
       margin-right: 8px;
     }
-
-    span {
-      color: $primaryOrange;
-      border-bottom: 1px solid $primaryOrange;
-      cursor: pointer;
-      font-weight: bold;
-    }
   }
 
   &-popup {
     margin-top: 15px;
-    background: #ffffff;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
     border-radius: 10px;
     overflow: hidden;
     padding: 5px;
-    width: 160px;
+    right: -7px;
     position: absolute;
-    z-index: 5;
+    top: 38px;
     ul {
-      overflow: hidden;
-      border-radius: 10px;
       li {
         padding: 12px 20px;
         cursor: pointer;
-        border-radius: 10px;
+        border-radius: 30px;
+        background-color: $white;
         margin: 5px 0;
+        width: 200px;
         &.active,
         &:hover {
           background: $bgYellow;
