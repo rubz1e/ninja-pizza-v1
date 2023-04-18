@@ -58,13 +58,10 @@ export default function ProductCard({
               {title}
             </a>
             <div className='product-card__consist'>
-              {sizes && (
-                <span className='product-card__weight'>
-                  {sizes} см/
-                  {weight ? `${weight} г — ` : `${volume} г`}
-                </span>
-              )}
-              {!sizes && <span className='product-card__weight'>{weight ? `${weight} г — ` : `${volume} г`}</span>}
+              <span className='product-card__weight'>
+                {sizes ? `${sizes} см/` : ''}
+                {weight ? `${weight} г — ` : `${volume} г`}
+              </span>
               <span className='product-card__description'>{description}</span>
             </div>
           </div>

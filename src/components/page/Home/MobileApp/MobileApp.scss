@@ -1,0 +1,56 @@
+@import '../../../../scss/variables';
+@import '../../../../scss/components/all';
+
+.mobile {
+  &-app {
+    max-width: 1464px;
+    padding: 0 15px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    height: 420px;
+    &__content {
+      width: 100%;
+      padding: 0 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: $yellow;
+      border-radius: 24px;
+    }
+    &__text {
+      line-height: 120%;
+      font-weight: 800;
+      color: $black;
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+    }
+    &__title {
+      @include fontH1;
+      font-weight: 800;
+      line-height: 100%;
+    }
+    &__links {
+      display: flex;
+    }
+    &__link {
+      display: flex;
+      margin-top: 48px;
+      margin-right: 16px;
+    }
+    &__image {
+      margin-top: auto;
+      position: relative;
+      z-index: 1;
+      max-width: 688px;
+      width: 100%;
+      display: flex;
+    }
+    &__desktop {
+      position: inherit;
+      z-index: 1;
+      width: 100%;
+    }
+  }
+}

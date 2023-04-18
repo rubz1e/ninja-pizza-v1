@@ -8,7 +8,7 @@ import { ReactComponent as Magazine } from '../../../assets/magazine.svg';
 
 export default function Header() {
   return (
-    <div className='header'>
+    <header className='header'>
       <div className='wrapper'>
         <div className='header-content'>
           <div className='header-left'>
@@ -53,6 +53,6 @@ export default function Header() {
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 }

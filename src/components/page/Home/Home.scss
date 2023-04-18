@@ -32,45 +32,27 @@
   &-content {
     margin-top: 104px;
   }
-}
-
-.product {
-  &-list {
-    display: flex;
-    position: relative;
-    align-items: flex-start;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 104px;
-    &__top {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0 auto;
-      @include fontH1;
+  &-text {
+    max-width: 1300px;
+    padding: 0 15px;
+    margin: 0 auto;
+    margin: 100px 300px;
+    h2 {
+      color: $graySecond;
+      font-size: 24px;
+      line-height: 120%;
+      font-weight: 700;
     }
-    &__wrapper {
-      width: 100%;
-      margin: 0 auto;
-      max-width: 1300px;
-      padding: 0 15px;
+    p,
+    li {
+      color: $grayThird;
+      font-size: 12px;
     }
-    &__content {
-      margin-top: 32px;
-    }
-    &__temp {
-      display: grid;
-      grid-gap: 4px;
-      grid-template-columns: repeat(auto-fill, minmax(314px, 1fr));
-    }
-    &__bottom {
-      margin: 0 auto;
-    }
-    &__button {
-      margin: 50px 0;
-      @include button;
-      background-color: $gray;
-      color: $white;
+    h3 {
+      font-size: 18px;
+      color: $graySecond;
+      font-weight: 700;
+      line-height: 120%;
     }
   }
 }
