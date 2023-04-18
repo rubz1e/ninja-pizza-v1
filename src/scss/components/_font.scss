@@ -5,3 +5,9 @@
   color: $black;
   font-weight: 800;
 }
+
+@mixin fontH2 {
+  font-size: 34px;
+  color: $black;
+  font-weight: 700;
+}

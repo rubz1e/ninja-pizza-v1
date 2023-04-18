@@ -2,7 +2,7 @@ import axios from 'axios';
 import { NinjaPizza, CategoryType, CategoryFilterType } from '../../type/categoryTypes';
 
 const getCategoryList = async (element: CategoryType, filter: CategoryFilterType) => {
-  await new Promise((resolve) => setTimeout(resolve, 0));
+  await new Promise((resolve) => setTimeout(resolve, 1000));
   const URL_API = `https://ninja-food-db.vercel.app/${element}`;
   const defaultParams = {
     _sort: filter.sortField,

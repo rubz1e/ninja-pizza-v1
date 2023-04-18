@@ -1,0 +1,41 @@
+@import '../../../scss/variables';
+@import '../../../scss/components/all';
+
+.notfound {
+  &-wrapper {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  &-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  &-title {
+    @include fontH2;
+    margin-top: 5px;
+  }
+  &-description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: $graySecond;
+    margin-top: 20px;
+    max-width: 340px;
+    text-align: center;
+  }
+  &-button {
+    width: 100%;
+    max-width: 340px;
+    margin-top: 32px;
+    @include button;
+    background-color: $primaryGreen;
+    color: $white;
+
+    &:hover {
+      background-color: $hoverGreenSecond;
+    }
+  }
+}

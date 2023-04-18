@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import './Header.scss';
 
 import { ReactComponent as Logo } from '../../../assets/logo.svg';
@@ -20,35 +22,35 @@ export default function Header() {
             <div className='header-navigation'>
               <ul className='nav-item'>
                 <li className='nav-item__list'>
-                  <a href='/'>Главная</a>
+                  <Link to='/'>Главная</Link>
                 </li>
                 <li className='nav-item__list'>
-                  <a href='/'>Меню</a>
+                  <Link to='/'>Меню</Link>
                 </li>
                 <li className='nav-item__list'>
-                  <a href='/'>Клиентам</a>
+                  <Link to='/about'>Клиентам</Link>
                 </li>
                 <li className='nav-item__list'>
-                  <a href='/'>Новости</a>
+                  <Link to='/news'>Новости</Link>
                 </li>
               </ul>
             </div>
           </div>
           <div className='header-right'>
             <div className='header-info'>
-              <a className='header-info__phone' href='tel:+38 (067) 579 69 75'>
+              <Link className='header-info__phone' to='tel:+38 (067) 579 69 75'>
                 <Phone width='24' height='24' />
                 <p className=''>+38 (067) 579 69 75</p>
-              </a>
-              <a href='/' className='header-info__favorite'>
+              </Link>
+              <Link to='/favorite' className='header-info__favorite'>
                 <Favorite width='24' height='24' />
-              </a>
-              <a href='/' className='header-info__private'>
+              </Link>
+              <Link to='/account' className='header-info__private'>
                 <Private width='24' height='24' />
-              </a>
-              <a href='/' className='header-info__cart'>
+              </Link>
+              <Link to='/cart' className='header-info__cart'>
                 <Magazine width='24' height='24' />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

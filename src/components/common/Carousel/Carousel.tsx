@@ -10,6 +10,7 @@ import Netflix from '../../../assets/banners/netflix7_slider.webp';
 import NewNews from '../../../assets/banners/5new_slider.webp';
 import Android from '../../../assets/banners/fixand1513ua.webp';
 import Legend from '../../../assets/banners/legend.png';
+import React from 'react';
 
 export default function Carousel() {
   const data = [{ img: News }, { img: Netflix }, { img: NewNews }, { img: Android }, { img: Legend }];
