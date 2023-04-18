@@ -46,7 +46,9 @@ export default function Home() {
           <ProductList id='3' title='Дессерты' category='desserts' />
           <ProductList id='4' title='Соусы' category='sausec' />
         </div>
-        <MobileApp />
+        <div className='home-banner'>
+          <MobileApp />
+        </div>
         <div className='home-text'>
           <HomeInfo />
         </div>
