@@ -5,7 +5,8 @@ export interface NinjaPizza {
   title: string;
   description?: string;
   sizes?: number;
-  weight: number;
+  weight?: number;
+  volume?: number;
   price: number;
   category: number[];
   rating: number;
