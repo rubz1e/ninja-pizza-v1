@@ -3,16 +3,17 @@ export interface NinjaPizza {
   imageUrl: string;
   nameUrl: string;
   title: string;
-  description: string;
-  sizes: number;
+  description?: string;
+  sizes?: number;
   weight: number;
   price: number;
   category: number[];
   rating: number;
   newProduct?: boolean;
+  hit?: boolean;
 }
 
-export type CategoryType = 'pizza' | 'drinks' | 'desserts' | 'supplements';
+export type CategoryType = 'pizza' | 'drinks' | 'desserts' | 'sausec';
 
 export interface CategoryFilterType {
   sortField?: string;

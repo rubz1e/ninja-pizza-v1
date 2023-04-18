@@ -2,6 +2,7 @@
 @import '../../../scss/components/all';
 
 .home {
+  transition: 0.2s ease-in-out;
   &-bottom {
     display: flex;
     justify-content: space-between;
@@ -40,6 +41,7 @@
     align-items: flex-start;
     flex-direction: column;
     width: 100%;
+    margin-top: 104px;
     &__top {
       display: flex;
       justify-content: center;

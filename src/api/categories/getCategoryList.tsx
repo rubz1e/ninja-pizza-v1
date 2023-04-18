@@ -3,7 +3,7 @@ import { NinjaPizza, CategoryType, CategoryFilterType } from '../../type/categor
 
 const getCategoryList = async (element: CategoryType, filter: CategoryFilterType) => {
   await new Promise((resolve) => setTimeout(resolve, 0));
-  const URL_API = `https://643c163770ea0e6602a1151a.mockapi.io/${element}`;
+  const URL_API = `https://ninja-food-db.vercel.app/${element}`;
   const defaultParams = {
     _sort: filter.sortField,
     _order: filter.sortDir,
