@@ -1,8 +1,7 @@
-import React from 'react';
-
 import './Home.scss';
+
 import Carousel from '../../common/Carousel/Carousel';
-import ProductList from './ProductList/ProductList';
+import ProductList from '../../common/ProductList/ProductList';
 import MobileApp from './MobileApp/MobileApp';
 import HomeInfo from './HomeInfo/HomeInfo';
 

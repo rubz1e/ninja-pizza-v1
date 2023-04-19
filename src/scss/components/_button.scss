@@ -19,3 +19,17 @@
     background-color: $yellow;
   }
 }
+
+.button {
+  &-back {
+    &__button {
+      @include button;
+      gap: 5px;
+      background-color: $bgTransparentSecond;
+
+      & svg {
+        fill: $black;
+      }
+    }
+  }
+}

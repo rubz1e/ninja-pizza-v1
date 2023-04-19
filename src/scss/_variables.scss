@@ -1,7 +1,7 @@
 $container-width: 90%;
 // $background: #fff;
 $background: #f3f2f2;
-// $background: #f6f6f6;
+$backgroundSecond: #fff3dd;
 // Ацкентный
 $primaryGreen: #00cc2d;
 $primaryOrange: #ff6633;
@@ -28,7 +28,6 @@ $dividerSecond: #ededed;
 $dividerThird: #f5f5f5;
 
 // Фон
-$bgGray: #f5f5f7;
 $bgInput: #f5f5f7;
 $bgTransparentFirst: rgba(39, 39, 39, 0.1);
 $bgTransparentSecond: rgba(39, 39, 39, 0.05);
@@ -36,6 +35,7 @@ $bgTransparentSecond: rgba(39, 39, 39, 0.05);
 $bgYellow: #fef7ed;
 $bgOrange: #fbdcd5;
 $bgGreen: #ccf5d5;
+$bgGray: #f5f5f7;
 
 // Ховер
 $hoverGreenSecond: #02bd2b;

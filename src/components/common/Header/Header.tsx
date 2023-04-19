@@ -11,7 +11,7 @@ import { ReactComponent as Magazine } from '../../../assets/magazine.svg';
 export default function Header() {
   return (
     <header className='header'>
-      <div className='wrapper'>
+      <div className='wrapper header-wrapper'>
         <div className='header-content'>
           <div className='header-left'>
             <div className='header-logo'>
@@ -25,7 +25,7 @@ export default function Header() {
                   <Link to='/'>Главная</Link>
                 </li>
                 <li className='nav-item__list'>
-                  <Link to='/'>Меню</Link>
+                  <Link to='/menu'>Меню</Link>
                 </li>
                 <li className='nav-item__list'>
                   <Link to='/about'>Клиентам</Link>

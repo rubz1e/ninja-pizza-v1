@@ -1,0 +1,50 @@
+@import '../../../scss/variables';
+@import '../../../scss/components/all';
+
+.category {
+  display: flex;
+  flex-direction: column;
+
+  &-wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
+  }
+
+  &-top {
+  }
+
+  &-title {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 34px;
+  }
+
+  &-name {
+    @include fontH1;
+  }
+
+  &-content {
+    position: relative;
+    z-index: 1;
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-options {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row-reverse;
+  }
+
+  &-list {
+    margin-top: 4px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 4px;
+  }
+}

@@ -21,7 +21,7 @@ export default function ProductCard({
   hit,
 }: NinjaPizza) {
   return (
-    <div>
+    <>
       <div className='product-card'>
         <div className='product-card__top'>
           <div className='product-card__species-top'>
@@ -37,7 +37,7 @@ export default function ProductCard({
             </div>
           </div>
           <div className='product-card__image'>
-            <img src={imageUrl} alt={nameUrl} />
+            <img src={imageUrl} alt={title} />
           </div>
           <div className='product-card__species-bottom'>
             {category && category.includes(1) && (
@@ -74,6 +74,6 @@ export default function ProductCard({
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

@@ -1,4 +1,5 @@
 export interface NinjaPizza {
+  type: string;
   id: number;
   imageUrl: string;
   nameUrl: string;

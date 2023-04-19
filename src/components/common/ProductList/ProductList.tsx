@@ -1,12 +1,6 @@
 import './ProductList.scss';
-import MainCategoryList from '../MainCategoryList/MainCategoryList';
-import { CategoryType } from '../../../../type/categoryTypes';
-
-interface ProductListProps {
-  id: string;
-  title: string;
-  category: CategoryType;
-}
+import ProductCategory from '../ProductCategory/ProductCategory';
+import { ProductListProps } from '../../../type/productProps';
 
 export default function ProductList({ id, title, category }: ProductListProps) {
   return (
@@ -15,7 +9,7 @@ export default function ProductList({ id, title, category }: ProductListProps) {
       <div className='product-list__wrapper'>
         <div className='product-list__content'>
           <div className='product-list__temp'>
-            <MainCategoryList getElement={category} />
+            <ProductCategory getElement={category} numberToShow={8} />
           </div>
         </div>
       </div>
