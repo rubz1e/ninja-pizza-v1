@@ -8,9 +8,12 @@ import Meat from '../../../assets/categories/meatFilter.png';
 import WithoutMeat from '../../../assets/categories/withoutMeatFilter.png';
 import Fish from '../../../assets/categories/fishFilter.png';
 
-export default function Categories() {
-  const [isActiveIndex, setIsActiveIndex] = React.useState(0);
+interface CategoriesProps {
+  categoryName: number;
+  onClickCategory: (categoryNumber: number) => void;
+}
 
+export default function Categories({ categoryName, onClickCategory }: CategoriesProps) {
   const categories = [
     { type: 'Все', img: Alls },
     { type: 'Острые', img: Spicy },
@@ -19,15 +22,11 @@ export default function Categories() {
     { type: 'Морепродукты', img: Fish },
   ];
 
-  const onClickCategories = (index: React.SetStateAction<number>) => {
-    setIsActiveIndex(index);
-  };
-
   return (
     <div className='categories'>
       <ul>
-        {categories.map((category, index) => (
-          <li key={index} onClick={() => onClickCategories(index)} className={isActiveIndex === index ? 'active' : ''}>
+        {categories.map((category, i) => (
+          <li key={i} onClick={() => onClickCategory(i)} className={categoryName === i ? 'active' : ''}>
             <img src={category.img} alt={category.type} />
             <p>{category.type}</p>
           </li>

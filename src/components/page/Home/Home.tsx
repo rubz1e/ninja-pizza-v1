@@ -40,10 +40,10 @@ export default function Home() {
       </div>
       <div className='home-content'>
         <div className='home-products'>
-          <ProductList id='1' title='Пиццы' category='pizza' />
-          <ProductList id='2' title='Напитки' category='drinks' />
-          <ProductList id='3' title='Дессерты' category='desserts' />
-          <ProductList id='4' title='Соусы' category='sausec' />
+          <ProductList id='1' title='Пиццы 🍕' category='pizza' />
+          <ProductList id='2' title='Напитки 🥤' category='drinks' />
+          <ProductList id='3' title='Дессерты 🍰' category='desserts' />
+          <ProductList id='4' title='Соусы 🥫' category='sausec' />
         </div>
         <div className='home-banner'>
           <MobileApp />

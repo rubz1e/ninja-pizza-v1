@@ -1,12 +1,40 @@
+import { useEffect, useState } from 'react';
+
 import './Product.scss';
 
 import Categories from '../../common/Categories/Categories';
 import Sort from '../../common/Sort/Sort';
-import ProductCategory from '../../common/ProductCategory/ProductCategory';
 
 import { ProductProps } from '../../../type/productProps';
+import { NinjaPizza } from '../../../type/categoryTypes';
+import ProductCard from '../../common/ProductCard/ProductCard';
+import getCategoryItem from '../../../api/categories/getCategoryItem';
+import Skeleton from '../../common/Skeleton/Skeleton';
 
 export default function Product({ title, category }: ProductProps) {
+  const [isLoading, setIsLoading] = useState(true);
+  const [isCategoryList, setIsCategoryList] = useState<NinjaPizza[]>([]);
+  const [isSortType, setIsSortType] = useState({
+    name: 'Популярности',
+    sortField: 'rating',
+  });
+  const [isCategoryId, setIsCategoryId] = useState(0);
+
+  const skeletonList = [...new Array(4)].map((_, index) => <Skeleton key={index} />);
+  const productList = isCategoryList.map((obj, id) => <ProductCard key={id} {...obj} />);
+
+  useEffect(() => {
+    setIsLoading(true);
+    const fetchData = async () => {
+      const filter = 'category';
+      const response = await getCategoryItem(category, filter, isCategoryId, isSortType);
+      setIsCategoryList(response.data);
+      setIsLoading(false);
+      console.log(isSortType);
+    };
+    fetchData();
+  }, [isSortType, isCategoryId, category]);
+
   return (
     <div className='category'>
       <div className='category-wrapper'>
@@ -17,12 +45,15 @@ export default function Product({ title, category }: ProductProps) {
         </div>
         <div className='category-content'>
           <div className='category-options'>
-            {category === 'pizza' && <Categories />}
-            <Sort />
+            {category === 'pizza' && (
+              <Categories categoryName={isCategoryId} onClickCategory={(i) => setIsCategoryId(i)} />
+            )}
+            <Sort
+              value={isSortType}
+              onChangeSort={(obj: any) => setIsSortType({ name: obj.name, sortField: obj.sortField })}
+            />
           </div>
-          <div className='category-list'>
-            <ProductCategory getElement={category} />
-          </div>
+          <div className='category-list'>{isLoading ? skeletonList : productList}</div>
         </div>
       </div>
     </div>

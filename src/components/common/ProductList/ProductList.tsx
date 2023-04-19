@@ -1,5 +1,5 @@
 import './ProductList.scss';
-import ProductCategory from '../ProductCategory/ProductCategory';
+import ProductCategory from '../ProductCategoryList/ProductCategoryList';
 import { ProductListProps } from '../../../type/productProps';
 
 export default function ProductList({ id, title, category }: ProductListProps) {

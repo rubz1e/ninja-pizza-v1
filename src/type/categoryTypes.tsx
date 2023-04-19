@@ -9,7 +9,7 @@ export interface NinjaPizza {
   weight?: number;
   volume?: number;
   price: number;
-  category: number[];
+  category: number;
   rating: number;
   newProduct?: boolean;
   hit?: boolean;

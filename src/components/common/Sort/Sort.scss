@@ -4,33 +4,28 @@
   &-label {
     display: flex;
     align-items: center;
+    svg {
+      margin-right: 8px;
+    }
 
     &_name {
       display: flex;
-      width: 200px;
-      padding: 18px 25px;
-      background-color: #f9f9f9;
-      border-radius: 10px;
-      justify-content: space-between;
+      margin-left: 5px;
       cursor: pointer;
       align-items: center;
 
-      svg {
-        margin-right: 8px;
-      }
       span {
         display: flex;
+        border-bottom: 2px dotted $primaryOrange;
         justify-content: center;
-        border-radius: 30px;
         position: relative;
         color: $black;
         font-weight: bold;
       }
-      border: 1px solid orange;
     }
 
     b {
-      margin-right: 8px;
+      margin-right: 3px;
     }
   }
 
@@ -42,7 +37,7 @@
     right: 0px;
     position: absolute;
     z-index: 2;
-    top: 50px;
+    top: 15px;
     background-color: $white;
     ul {
       li {

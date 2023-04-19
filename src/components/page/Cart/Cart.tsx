@@ -3,19 +3,19 @@ import { Link } from 'react-router-dom';
 
 import './Cart.scss';
 
-import { ReactComponent as Close } from '../../../assets/burgerMenu/open.svg';
-import { ReactComponent as Minus } from '../../../assets/minusButton.svg';
-import { ReactComponent as Plus } from '../../../assets/plusButton.svg';
-import { ReactComponent as DeleteCart } from '../../../assets/Cart/deleteCart.svg';
-import { ReactComponent as Basket } from '../../../assets/magazine.svg';
-import { ReactComponent as ArrowBack } from '../../../assets/arrowBack.svg';
+// import { ReactComponent as Close } from '../../../assets/burgerMenu/open.svg';
+// import { ReactComponent as Minus } from '../../../assets/minusButton.svg';
+// import { ReactComponent as Plus } from '../../../assets/plusButton.svg';
+// import { ReactComponent as DeleteCart } from '../../../assets/Cart/deleteCart.svg';
+// import { ReactComponent as Basket } from '../../../assets/magazine.svg';
+// import { ReactComponent as ArrowBack } from '../../../assets/arrowBack.svg';
 
 import PizzaImg from '../../../assets/Cart/pizza2x.webp';
 import DrinkImg from '../../../assets/Cart/drinks2x.webp';
 import SausecImg from '../../../assets/Cart/sauces2x.webp';
 import DessertsImg from '../../../assets/Cart/desert2x.webp';
 
-import Test from '../../../assets/Cart/pizza2x.webp';
+// import Test from '../../../assets/Cart/pizza2x.webp';
 
 export default function Cart() {
   return (
@@ -23,7 +23,7 @@ export default function Cart() {
       <div className='cart-wrapper'>
         {/* Пустая корзина */}
 
-        {/* <div className='cart-clear'>
+        <div className='cart-clear'>
           <h2 className='cart-clear__title'>Ваша корзина пуста 😕</h2>
           <p className='cart-clear__description'>Это нужно поправить. Переходите в меню и выбирайте вкусную пиццу!</p>
           <div className='cart-menu cart-menu__list'>
@@ -52,11 +52,11 @@ export default function Cart() {
               <div className='cart-menu__title'>Дессерты</div>
             </Link>
           </div>
-        </div> */}
+        </div>
 
         {/* Корзина с чем-либо */}
 
-        <div className='cart-top'>
+        {/* <div className='cart-top'>
           <div className='cart-top__left'>
             <Basket width='24' height='24' fill='black' />
             <h2>Корзина</h2>
@@ -106,7 +106,7 @@ export default function Cart() {
             </div>
           </div>
           <button className='cart-total__button'>Оформить</button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

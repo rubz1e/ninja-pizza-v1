@@ -19,10 +19,10 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/cart' element={<Cart />} />
-          <Route path='/pizza' element={<Product title='Пиццы' category='pizza' />} />
-          <Route path='/desserts' element={<Product title='Дессерты' category='desserts' />} />
-          <Route path='/drinks' element={<Product title='Напитки' category='drinks' />} />
-          <Route path='/sausec' element={<Product title='Соусы' category='sausec' />} />
+          <Route path='/pizza' element={<Product title='Пиццы 🍕' category='pizza' />} />
+          <Route path='/drinks' element={<Product title='Напитки 🥤' category='drinks' />} />
+          <Route path='/desserts' element={<Product title='Дессерты 🍰' category='desserts' />} />
+          <Route path='/sausec' element={<Product title='Соусы 🥫' category='sausec' />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </main>

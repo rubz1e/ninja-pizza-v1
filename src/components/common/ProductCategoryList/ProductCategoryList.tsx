@@ -7,15 +7,13 @@ import ProductCard from '../ProductCard/ProductCard';
 import { NinjaPizza } from '../../../type/categoryTypes';
 import { ProductCategoryProps } from '../../../type/productProps';
 
-export default function ProductCategory({ getElement, numberToShow }: ProductCategoryProps) {
+export default function ProductCategoryList({ getElement, numberToShow }: ProductCategoryProps) {
   const [isCategoryList, setIsCategoryList] = useState<NinjaPizza[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
-      const filter = {
-        sortField: 'id',
-      };
+      const filter = {};
       const response = await getCategoryList(getElement, filter);
       setIsCategoryList(response.data);
       setIsLoading(false);
