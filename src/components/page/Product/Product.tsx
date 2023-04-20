@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 import './Product.scss';
 
@@ -12,16 +13,22 @@ import getCategoryItem from '../../../api/categories/getCategoryItem';
 import Skeleton from '../../common/Skeleton/Skeleton';
 
 import Pagination from '../../common/Pagination/Pagination';
+import { setCategoryId, setCurrentPage } from '../../../redux/slices/filterSlice';
 
 export default function Product({ title, category }: ProductProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [isCategoryList, setIsCategoryList] = useState<NinjaPizza[]>([]);
-  const [isSortType, setIsSortType] = useState({
-    name: 'Популярности',
-    sortField: 'rating',
-  });
-  const [isCategoryId, setIsCategoryId] = useState(0);
-  const [isCurrentPage, setIsCurrentPage] = useState(1);
+
+  const { isCategoryId, isCurrentPage, isSortType } = useSelector((state: unknown) => (state as any).filter);
+  const dispatch = useDispatch();
+
+  const onClickCategory = (id: any) => {
+    dispatch(setCategoryId(id));
+  };
+
+  const onChangePage = (num: number) => {
+    dispatch(setCurrentPage(num));
+  };
 
   const skeletonList = [...new Array(4)].map((_, index) => <Skeleton key={index} />);
   const productList = isCategoryList.map((obj, id) => <ProductCard key={id} {...obj} />);
@@ -33,7 +40,6 @@ export default function Product({ title, category }: ProductProps) {
       const response = await getCategoryItem(category, filter, isCurrentPage, isCategoryId, isSortType);
       setIsCategoryList(response.data);
       setIsLoading(false);
-      console.log(isCategoryId);
     };
     fetchData();
   }, [isSortType, isCategoryId, category, isCurrentPage]);
@@ -49,15 +55,12 @@ export default function Product({ title, category }: ProductProps) {
         <div className='category-content'>
           <div className='category-options'>
             {category === 'pizza' && (
-              <Categories categoryName={isCategoryId} onClickCategory={(i) => setIsCategoryId(i)} />
+              <Categories categoryName={isCategoryId} onClickCategory={(i) => onClickCategory(i)} />
             )}
-            <Sort
-              value={isSortType}
-              onChangeSort={(obj: any) => setIsSortType({ name: obj.name, sortField: obj.sortField })}
-            />
+            <Sort />
           </div>
           <div className='category-list'>{isLoading ? skeletonList : productList}</div>
-          <Pagination onChangePage={(page: number) => setIsCurrentPage(page)} />
+          <Pagination currentPage={isCurrentPage} onChangePage={onChangePage} />
         </div>
       </div>
     </div>

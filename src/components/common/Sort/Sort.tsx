@@ -1,22 +1,24 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { setSort } from '../../../redux/slices/filterSlice';
+
 import './Sort.scss';
 
 import { ReactComponent as Arrow } from '../../../assets/arrow.svg';
 
-interface SortProps {
-  value: { name: string; sortField: string };
-  onChangeSort: (categoryNumber: number) => void;
-}
+export default function Sort() {
+  const sort = useSelector((state: unknown) => (state as any).filter.isSortType);
+  const dispatch = useDispatch();
 
-export default function Sort({ value, onChangeSort }: SortProps) {
   const [isOpen, setIsOpen] = React.useState(false);
   const categories = [
     { name: 'Популярности', sortField: 'rating' },
     { name: 'Цене (с дешевых)', sortField: '-price' },
     { name: 'Цене (с дорогих)', sortField: 'price' },
   ];
-  const onClickSelected = (index: any) => {
-    onChangeSort(index);
+
+  const onClickSelected = (obj: any) => {
+    dispatch(setSort(obj));
     setIsOpen(!isOpen);
   };
 
@@ -27,7 +29,7 @@ export default function Sort({ value, onChangeSort }: SortProps) {
           <Arrow />
           <b>Сортировка по: </b>
           <div className='sort-label_name' onClick={() => setIsOpen(!isOpen)}>
-            <span className='sort-open'>{value.name}</span>
+            <span className='sort-open'>{sort.name}</span>
           </div>
         </div>
         {isOpen && (
@@ -37,7 +39,7 @@ export default function Sort({ value, onChangeSort }: SortProps) {
                 <li
                   key={index}
                   onClick={() => onClickSelected(obj)}
-                  className={value.sortField === obj.sortField ? 'active' : ''}
+                  className={sort.sortField === obj.sortField ? 'active' : ''}
                 >
                   <p>{obj.name}</p>
                 </li>
