@@ -1,0 +1,36 @@
+@import '../../../scss/variables';
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 25px 0;
+  gap: 5px;
+
+  li {
+    cursor: pointer;
+
+    a {
+      display: flex;
+      width: 40px;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+      color: $primaryOrange;
+      border: 1px solid $primaryOrange;
+      border-radius: 50%;
+      transition: 0.2s ease-in-out;
+
+      &:hover {
+        color: $white;
+        background-color: $primaryOrange;
+      }
+    }
+  }
+  .selected {
+    a {
+      color: $white;
+      background-color: $primaryOrange;
+    }
+  }
+}

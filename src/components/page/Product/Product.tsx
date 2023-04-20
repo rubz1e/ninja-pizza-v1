@@ -11,6 +11,8 @@ import ProductCard from '../../common/ProductCard/ProductCard';
 import getCategoryItem from '../../../api/categories/getCategoryItem';
 import Skeleton from '../../common/Skeleton/Skeleton';
 
+import Pagination from '../../common/Pagination/Pagination';
+
 export default function Product({ title, category }: ProductProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [isCategoryList, setIsCategoryList] = useState<NinjaPizza[]>([]);
@@ -19,6 +21,7 @@ export default function Product({ title, category }: ProductProps) {
     sortField: 'rating',
   });
   const [isCategoryId, setIsCategoryId] = useState(0);
+  const [isCurrentPage, setIsCurrentPage] = useState(1);
 
   const skeletonList = [...new Array(4)].map((_, index) => <Skeleton key={index} />);
   const productList = isCategoryList.map((obj, id) => <ProductCard key={id} {...obj} />);
@@ -27,13 +30,13 @@ export default function Product({ title, category }: ProductProps) {
     setIsLoading(true);
     const fetchData = async () => {
       const filter = 'category';
-      const response = await getCategoryItem(category, filter, isCategoryId, isSortType);
+      const response = await getCategoryItem(category, filter, isCurrentPage, isCategoryId, isSortType);
       setIsCategoryList(response.data);
       setIsLoading(false);
-      console.log(isSortType);
+      console.log(isCategoryId);
     };
     fetchData();
-  }, [isSortType, isCategoryId, category]);
+  }, [isSortType, isCategoryId, category, isCurrentPage]);
 
   return (
     <div className='category'>
@@ -54,6 +57,7 @@ export default function Product({ title, category }: ProductProps) {
             />
           </div>
           <div className='category-list'>{isLoading ? skeletonList : productList}</div>
+          <Pagination onChangePage={(page: number) => setIsCurrentPage(page)} />
         </div>
       </div>
     </div>
