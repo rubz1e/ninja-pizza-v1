@@ -2,24 +2,15 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../../../hooks/redux-hooks';
 import { setUser } from '../../../redux/slices/userSlice';
-import {
-  getAuth,
-  signInWithEmailAndPassword,
-  signInWithPopup,
-  GoogleAuthProvider,
-  sendPasswordResetEmail,
-} from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import { Form } from '../../common/Form/Form';
 import './Login.scss';
 
 import { ReactComponent as Google } from '../../../assets/google-icon.svg';
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const auth = getAuth();
 
   const provider = new GoogleAuthProvider();
 
@@ -27,10 +18,7 @@ const Login = () => {
     const auth = getAuth();
     signInWithPopup(auth, provider)
       .then((result) => {
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential?.accessToken;
         const user = result.user;
-        console.log(user);
         dispatch(
           setUser({
             email: user.email,

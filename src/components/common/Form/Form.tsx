@@ -4,12 +4,13 @@ import './Form.scss';
 
 interface FormProps {
   title: string;
-  handleClick: (email: string, password: string) => void;
+  handleClick: (email: string, password: string, name: string) => void;
 }
 
 const Form = ({ title, handleClick }: FormProps) => {
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
+  const [name, setName] = useState('');
 
   const {
     register,
@@ -65,7 +66,12 @@ const Form = ({ title, handleClick }: FormProps) => {
             <p className='form-alert'>Максимальная длина пароля 20 символов!</p>
           )}
         </label>
-        <button type='submit' disabled={!isValid} className='form-button' onClick={() => handleClick(email, pass)}>
+        <button
+          type='submit'
+          disabled={!isValid}
+          className='form-button'
+          onClick={() => handleClick(email, pass, name)}
+        >
           {title}
         </button>
       </form>

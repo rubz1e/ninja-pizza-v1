@@ -25,10 +25,10 @@ export default function Header() {
                   <Link to='/'>Главная</Link>
                 </li>
                 <li className='nav-item__list'>
-                  <Link to='/menu'>Меню</Link>
+                  <Link to='/menu'>Доставка</Link>
                 </li>
                 <li className='nav-item__list'>
-                  <Link to='/about'>Клиентам</Link>
+                  <Link to='/about'>О нас</Link>
                 </li>
                 <li className='nav-item__list'>
                   <Link to='/news'>Новости</Link>

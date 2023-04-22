@@ -3,6 +3,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 import './Carousel.scss';
 
 import News from '../../../assets/banners/slider_wakeup.webp';
@@ -18,14 +21,25 @@ export default function Carousel() {
   return (
     <div className='slider'>
       <Swiper
-        slidesPerView={2}
+        slidesPerView={1}
         centeredSlides={true}
+        freeMode
+        grabCursor
+        loop={true}
+        centeredSlidesBounds
         spaceBetween={30}
         pagination={{
           clickable: true,
         }}
         modules={[Pagination]}
         className='swiper-container'
+        breakpoints={{
+          320: { slidesPerView: 1, spaceBetween: 80 },
+          480: { slidesPerView: 1, spaceBetween: 150 },
+          768: { slidesPerView: 1, spaceBetween: 50 },
+          1024: { slidesPerView: 1, spaceBetween: 150 },
+          1350: { slidesPerView: 2, spaceBetween: 150 },
+        }}
       >
         {data.map((slide, index) => (
           <SwiperSlide key={index} className='slider-slide'>

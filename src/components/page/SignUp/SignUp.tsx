@@ -48,3 +48,6 @@ export default function SignUp() {
     </div>
   );
 }
+function getPhoneNumberFromUserInput() {
+  throw new Error('Function not implemented.');
+}
