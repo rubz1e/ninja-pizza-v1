@@ -45,7 +45,7 @@ export default function Header() {
               <Link to='/favorite' className='header-info__favorite'>
                 <Favorite width='24' height='24' />
               </Link>
-              <Link to='/account' className='header-info__private'>
+              <Link to='/home' className='header-info__private'>
                 <Private width='24' height='24' />
               </Link>
               <Link to='/cart' className='header-info__cart'>

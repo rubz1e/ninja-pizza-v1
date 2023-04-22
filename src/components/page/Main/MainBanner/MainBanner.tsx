@@ -1,11 +1,11 @@
 import React from 'react';
 
-import './MobileApp.scss';
+import './MainBanner.scss';
 import Banner from '../../../../assets/mobile-app-image_ua.png';
 import Android from '../../../../assets/android.svg';
 import IOS from '../../../../assets/ios.svg';
 
-export default function MobileApp() {
+export default function MainBanner() {
   return (
     <div>
       <div className='mobile-app'>

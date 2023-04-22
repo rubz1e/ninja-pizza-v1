@@ -1,4 +1,6 @@
-export default function HomeInfo() {
+import React from 'react';
+
+export default function MainInfo() {
   return (
     <div>
       <h2>Доставка пиццы по Киеву от NINJA PIZZA</h2>
