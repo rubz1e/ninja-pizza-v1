@@ -1,6 +1,7 @@
 @import '../../../scss/variables';
 
 .sort {
+  position: relative;
   &-label {
     display: flex;
     align-items: center;

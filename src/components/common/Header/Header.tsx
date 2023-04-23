@@ -42,10 +42,10 @@ export default function Header() {
                 <Phone width='24' height='24' />
                 <p className=''>+38 (067) 579 69 75</p>
               </Link>
-              <Link to='/favorite' className='header-info__favorite'>
+              <Link to={{ pathname: '/home', search: '?account=1' }} className='header-info__favorite'>
                 <Favorite width='24' height='24' />
               </Link>
-              <Link to='/home' className='header-info__private'>
+              <Link to={{ pathname: '/home', search: '?account=0' }} className='header-info__private'>
                 <Private width='24' height='24' />
               </Link>
               <Link to='/cart' className='header-info__cart'>

@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../../../hooks/redux-hooks';
 import { setUser } from '../../../redux/slices/userSlice';
-import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, User } from 'firebase/auth';
 import { Form } from '../../common/Form/Form';
 import './Login.scss';
 
@@ -11,39 +11,47 @@ import { ReactComponent as Google } from '../../../assets/google-icon.svg';
 const Login = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-
   const provider = new GoogleAuthProvider();
+  const auth = getAuth();
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem('userData');
+    if (storedUser) {
+      const user = JSON.parse(storedUser);
+      dispatch(setUser(user));
+      navigate('/home');
+      return;
+    }
+  }, [dispatch, navigate]);
+
+  const handleAuthSuccess = (user: User) => {
+    dispatch(
+      setUser({
+        email: user.email,
+        token: user.refreshToken,
+        id: user.uid,
+      })
+    );
+    localStorage.setItem(
+      'userData',
+      JSON.stringify({
+        email: user.email,
+        token: user.refreshToken,
+        id: user.uid,
+      })
+    );
+    navigate('/home');
+  };
 
   const handleLoginGoogle = () => {
-    const auth = getAuth();
     signInWithPopup(auth, provider)
-      .then((result) => {
-        const user = result.user;
-        dispatch(
-          setUser({
-            email: user.email,
-            token: user.refreshToken,
-            id: user.uid,
-          })
-        );
-        navigate('/home');
-      })
+      .then((result) => handleAuthSuccess(result.user))
       .catch((error) => console.log(error));
   };
 
   const handleLogin = (email: string, password: string) => {
-    const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
-      .then(({ user }) => {
-        dispatch(
-          setUser({
-            email: user.email,
-            token: user.refreshToken,
-            id: user.uid,
-          })
-        );
-        navigate('/home');
-      })
+      .then(({ user }) => handleAuthSuccess(user))
       .catch(console.error);
   };
 

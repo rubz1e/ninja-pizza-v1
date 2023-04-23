@@ -1,11 +1,10 @@
 import React from 'react';
-import './Favorite.scss';
 
-import { ReactComponent as FavoriteSVG } from '../../../assets/favoriteIcon.svg';
+import { ReactComponent as FavoriteSVG } from '../../../../assets/favoriteIcon.svg';
 
-export default function Favorite() {
+export default function HomeFavorite() {
   return (
-    <div className='home-orders'>
+    <div className='home-favorite'>
       <h2 className='home-title'>Избранные товары</h2>
       <div className='home-bottom'>
         <div className='home-bottom__card'>

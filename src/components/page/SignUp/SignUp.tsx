@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useAppDispatch } from '../../../hooks/redux-hooks';
 import { setUser } from '../../../redux/slices/userSlice';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
@@ -8,13 +8,11 @@ import './SignUp.scss';
 
 export default function SignUp() {
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
 
-  const handleRegister = (email: string, password: string) => {
+  const handleRegister = (email: string, password: string, name: string) => {
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
-        console.log(user);
         dispatch(
           setUser({
             email: user.email,
@@ -22,11 +20,9 @@ export default function SignUp() {
             id: user.uid,
           })
         );
-        navigate('/login');
       })
       .catch(console.error);
   };
-
   return (
     <div className='signup'>
       <div className='signup-wrapper'>
@@ -47,7 +43,4 @@ export default function SignUp() {
       </div>
     </div>
   );
-}
-function getPhoneNumberFromUserInput() {
-  throw new Error('Function not implemented.');
 }
