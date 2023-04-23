@@ -9,6 +9,7 @@
     position: relative;
     display: flex;
     height: 420px;
+    z-index: 0;
     &__content {
       padding: 0 88px;
       display: flex;

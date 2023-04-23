@@ -15,7 +15,7 @@ import { ReactComponent as Stroke } from '../../../assets/home/stroke.svg';
 import Avatar from '../../../assets/home/avatar.png';
 import HomeOrders from './HomeOrders/HomeOrders';
 import HomeFavorite from './HomeFavorite/HomeFavorite';
-import HomeGPS from './HoveGPS/HomeGPS';
+import HomeGPS from './HomeGPS/HomeGPS';
 
 export default function Home() {
   const location = useLocation();

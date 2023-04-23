@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSort } from '../../../redux/slices/filterSlice';
 
@@ -10,6 +10,8 @@ export default function Sort() {
   const sort = useSelector((state: unknown) => (state as any).filter.isSortType);
   const dispatch = useDispatch();
 
+  const sortRef = useRef<HTMLDivElement>(null);
+
   const [isOpen, setIsOpen] = React.useState(false);
   const categories = [
     { name: 'Популярности', sortField: 'rating' },
@@ -19,16 +21,29 @@ export default function Sort() {
 
   const onClickSelected = (obj: any) => {
     dispatch(setSort(obj));
-    setIsOpen(!isOpen);
+    setIsOpen(false);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event: any) => {
+      const path = event.composedPath();
+      if (!path.includes(sortRef.current)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.body.addEventListener('click', handleClickOutside);
+
+    return () => document.body.removeEventListener('click', handleClickOutside);
+  }, [isOpen]);
+
   return (
-    <div className='sort'>
+    <div ref={sortRef} className='sort'>
       <div className='sort-wrapper'>
         <div className='sort-label'>
           <Arrow />
           <b>Сортировка по: </b>
-          <div className='sort-label_name' onClick={() => setIsOpen(!isOpen)}>
+          <div className='sort-label_name' onClick={() => setIsOpen(!false)}>
             <span className='sort-open'>{sort.name}</span>
           </div>
         </div>
