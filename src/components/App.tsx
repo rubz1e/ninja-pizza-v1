@@ -13,8 +13,21 @@ import NotFound from './page/NotFound/NotFound';
 import SignUp from './page/SignUp/SignUp';
 import Home from './page/Home/Home';
 import ResetPassword from './page/ResetPassword/ResetPassword';
+import { useAppDispatch } from '../hooks/redux-hooks';
+import { useEffect } from 'react';
+import { setUser } from '../redux/slices/userSlice';
 
 function App() {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem('userData');
+    if (storedUser) {
+      const user = JSON.parse(storedUser);
+      dispatch(setUser(user));
+      return;
+    }
+  }, [dispatch]);
   return (
     <div className='App'>
       <Header />
