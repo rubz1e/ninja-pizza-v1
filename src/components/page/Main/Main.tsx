@@ -4,8 +4,22 @@ import Carousel from '../../common/Carousel/Carousel';
 import ProductList from '../../common/ProductList/ProductList';
 import MainBanner from './MainBanner/MainBanner';
 import MainInfo from './MainInfo/MainInfo';
+import { useAppDispatch } from '../../../hooks/redux-hooks';
+import { useEffect } from 'react';
+import { setUser } from '../../../redux/slices/userSlice';
 
 export default function Main() {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem('userData');
+    if (storedUser) {
+      const user = JSON.parse(storedUser);
+      dispatch(setUser(user));
+      return;
+    }
+  }, [dispatch]);
+
   return (
     <div className='main'>
       <div className='main-slider'>

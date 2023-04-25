@@ -1,15 +1,24 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import { useAppDispatch } from '../../../hooks/redux-hooks';
 import { setUser } from '../../../redux/slices/userSlice';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { Form } from '../../common/Form/Form';
 import './SignUp.scss';
+import AuthModal from '../AuthModal/AuthModal';
 
 export default function SignUp() {
   const dispatch = useAppDispatch();
+  const [isShowModal, setIsShowModal] = useState(false);
 
-  const handleRegister = (email: string, password: string, name: string) => {
+  const handleLoginClick = () => {
+    setIsShowModal(true);
+  };
+
+  const handleClose = () => {
+    setIsShowModal(false);
+  };
+
+  const handleRegister = (email: string, password: string) => {
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
@@ -21,7 +30,7 @@ export default function SignUp() {
           })
         );
       })
-      .catch(console.error);
+      .catch();
   };
   return (
     <div className='signup'>
@@ -34,10 +43,11 @@ export default function SignUp() {
             <Form title='Зарегистрироваться' handleClick={handleRegister} />
           </div>
           <div className='signup-bottom'>
-            <p className='signup-bottom__description'>Если вы уже зарегистрированы, войдите в свой аккаунт.</p>
-            <Link to='/login' className='signup-bottom__register'>
+            <hr className='signup-divider' />
+            <button onClick={handleLoginClick} className='signup-bottom__register'>
               Авторизация
-            </Link>
+            </button>
+            {isShowModal && <AuthModal onClose={handleClose} />}
           </div>
         </div>
       </div>

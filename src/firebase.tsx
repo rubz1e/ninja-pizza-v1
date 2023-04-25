@@ -1,4 +1,6 @@
 import { initializeApp } from 'firebase/app';
+import { getAuth, RecaptchaVerifier } from 'firebase/auth';
+import { signInWithPhoneNumber, PhoneAuthProvider } from 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -10,3 +12,6 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+export { auth, RecaptchaVerifier, signInWithPhoneNumber, PhoneAuthProvider };

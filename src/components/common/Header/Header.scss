@@ -126,6 +126,10 @@
       &:hover {
         background-color: $bgTransparentFirst;
       }
+      &-avatar {
+        border-radius: 50%;
+        border: 1px solid $bgTransparentSecond;
+      }
     }
 
     &__cart {
@@ -143,7 +147,6 @@
 
   &-expander {
     position: absolute;
-    top: 50px;
     right: 0;
     padding-top: 20px;
     &:hover {

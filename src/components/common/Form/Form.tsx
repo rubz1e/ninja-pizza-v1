@@ -4,13 +4,12 @@ import './Form.scss';
 
 interface FormProps {
   title: string;
-  handleClick: (email: string, password: string, name: string) => void;
+  handleClick: (email: string, password: string) => void;
 }
 
 const Form = ({ title, handleClick }: FormProps) => {
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
-  const [name, setName] = useState('');
 
   const {
     register,
@@ -34,7 +33,7 @@ const Form = ({ title, handleClick }: FormProps) => {
         <label htmlFor='text' className='form-label'>
           Ваша почта
           <input
-            placeholder='Почта'
+            placeholder='example@gmail.com'
             className='form-text'
             {...register('text', {
               onChange: (e) => setEmail(e.target.value),
@@ -48,7 +47,7 @@ const Form = ({ title, handleClick }: FormProps) => {
         <label htmlFor='password' className='form-label'>
           Ваш пароль
           <input
-            placeholder='Пароль'
+            placeholder='●●●●●●●●'
             className='form-password'
             type='password'
             {...register('password', {
@@ -66,12 +65,7 @@ const Form = ({ title, handleClick }: FormProps) => {
             <p className='form-alert'>Максимальная длина пароля 20 символов!</p>
           )}
         </label>
-        <button
-          type='submit'
-          disabled={!isValid}
-          className='form-button'
-          onClick={() => handleClick(email, pass, name)}
-        >
+        <button type='submit' disabled={!isValid} className='form-button' onClick={() => handleClick(email, pass)}>
           {title}
         </button>
       </form>

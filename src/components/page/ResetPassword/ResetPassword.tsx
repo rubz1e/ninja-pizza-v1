@@ -2,13 +2,22 @@ import { getAuth, sendPasswordResetEmail } from 'firebase/auth';
 import { useState } from 'react';
 import './ResetPassword.scss';
 import '../../common/Form/Form.scss';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import AuthModal from '../AuthModal/AuthModal';
 
 function ResetPassword() {
   const [email, setEmail] = useState('');
   const auth = getAuth();
   const navigate = useNavigate();
+  const [isShowModal, setIsShowModal] = useState(false);
 
+  const handleLoginClick = () => {
+    setIsShowModal(true);
+  };
+
+  const handleClose = () => {
+    setIsShowModal(false);
+  };
   const triggerResetEmail = async () => {
     await sendPasswordResetEmail(auth, email);
     navigate(-1);
@@ -33,9 +42,10 @@ function ResetPassword() {
             Сбросить пароль
           </button>
           <hr className='reset-divider' />
-          <Link to='/login' className='form-button'>
+          <button onClick={handleLoginClick} className='reset-button__login'>
             Авторизоваться
-          </Link>
+          </button>
+          {isShowModal && <AuthModal onClose={handleClose} />}
         </div>
       </div>
     </div>

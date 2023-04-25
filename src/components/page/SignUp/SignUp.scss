@@ -28,15 +28,33 @@
   &-form {
     margin-top: 24px;
   }
-
+  &-divider {
+    margin: 25px 0 5px 0;
+    border: 1px solid $bgTransparentSecond;
+  }
   &-bottom {
     display: flex;
     flex-direction: column;
-    margin-top: 35px;
 
     &__register {
-      margin-top: 15px;
-      @include button;
+      margin-top: 16px;
+      height: 52px;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      border-radius: 12px;
+      background: rgba(39, 39, 39, 0.05);
+      color: #1d1d1f;
+      cursor: pointer;
+      transition: 0.2s ease;
+      font-weight: 700;
+      font-size: 16px;
+      &:hover {
+        color: #333333;
+        background-color: #cd8a05;
+      }
     }
   }
 }

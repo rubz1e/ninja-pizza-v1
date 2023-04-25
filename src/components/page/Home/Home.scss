@@ -11,6 +11,12 @@
     width: 100%;
   }
 
+  &-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   &-content {
     flex-wrap: nowrap;
     display: flex;
@@ -58,6 +64,17 @@
       background-color: $white;
       border-radius: 12px;
       justify-content: space-between;
+    }
+  }
+
+  &-button__add {
+    @include button;
+    max-width: 200px;
+    width: 100%;
+    background-color: $primaryGreen;
+    color: $white;
+    &:hover {
+      background-color: $hoverGreenSecond;
     }
   }
 

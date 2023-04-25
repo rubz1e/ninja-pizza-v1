@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAppDispatch } from '../../../hooks/redux-hooks';
-import { useAuth } from '../../../hooks/use-auth';
+import { useAuth } from '../../../hooks/useAuth';
 import { removeUser } from '../../../redux/slices/userSlice';
 import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 
@@ -16,10 +16,24 @@ import Avatar from '../../../assets/home/avatar.png';
 import HomeOrders from './HomeOrders/HomeOrders';
 import HomeFavorite from './HomeFavorite/HomeFavorite';
 import HomeGPS from './HomeGPS/HomeGPS';
+import Modal from '../../common/Modal/Modal';
 
 export default function Home() {
   const location = useLocation();
   const [activeTab, setActiveTab] = useState(0);
+  const { isAuth, email } = useAuth();
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const [isShowSaveModal, setIsShowSaveModal] = useState(false);
+  const [isShowLogoutModal, setIsShowLogoutModal] = useState(false);
+
+  const handleClickSaveSettings = () => {
+    setIsShowSaveModal(true);
+  };
+
+  const handleClickLogout = () => {
+    setIsShowLogoutModal(true);
+  };
 
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
@@ -32,10 +46,6 @@ export default function Home() {
   const handleTabClick = (index: any) => {
     setActiveTab(index);
   };
-
-  const { isAuth, email } = useAuth();
-  const dispatch = useAppDispatch();
-  const navigate = useNavigate();
 
   const signOut = () => {
     dispatch(removeUser());
@@ -85,17 +95,34 @@ export default function Home() {
                   <div className='home-profile__right'>
                     <div className='home-profile__right-top'>
                       <h3 className='home-profile__name'>NINJA</h3>
-                      <button className='home-profile__edit'>
+                      <button onClick={handleClickSaveSettings} className='home-profile__edit'>
                         <Stroke width='16' height='16' />
                       </button>
+                      {isShowSaveModal && (
+                        <Modal
+                          onClose={() => setIsShowSaveModal(false)}
+                          title='Личные данные'
+                          description='Пожалуйста введите ваши корректные данные'
+                          button='Сохранить изменения'
+                        />
+                      )}
                     </div>
                     <h3 className='home-profile__description'>{email}</h3>
-                    <h3 className='home-profile__phone'>+380976986848</h3>
+                    <h3 className='home-profile__phone'>В разработке</h3>
                   </div>
                 </div>
-                <button className='home-tab__signout' onClick={() => signOut()}>
+                <button className='home-tab__signout' onClick={handleClickLogout}>
                   Выйти
                 </button>
+                {isShowLogoutModal && (
+                  <Modal
+                    title='Выход из аккаунта'
+                    description='Вы точно хотите выйти из своего аккаунта?'
+                    button='Выйти'
+                    onClose={() => setIsShowLogoutModal(false)}
+                    onClick={() => signOut()}
+                  />
+                )}
               </ul>
             </div>
           </div>

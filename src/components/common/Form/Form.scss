@@ -21,7 +21,7 @@
 
   &-text,
   &-password {
-    border-radius: 12px;
+    border-radius: 8px;
     border: none;
     padding: 12px 0 12px 16px;
     font-weight: 400;
@@ -31,9 +31,35 @@
   }
 
   &-button {
-    @include button;
-    margin-top: 30px;
+    font-size: 16px;
+    margin-top: 8px;
+    position: relative;
+    border: none;
+    padding: 0 24px;
     width: 100%;
-    background-color: $bgTransparentSecond;
+    border-radius: 12px;
+    cursor: pointer;
+    height: 56px;
+    width: 100%;
+    color: #c9cccf;
+    background: #333333;
+    transition: 0.2s ease;
+    line-height: 24px;
+    font-weight: 700;
+    outline: none;
+    transition: 0.2s ease-in-out;
+    &:hover {
+      color: #333333;
+      background-color: #cd8a05;
+    }
+  }
+  &-description {
+    display: flex;
+    justify-content: flex-end;
+    color: #a8abae;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
   }
 }

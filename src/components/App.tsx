@@ -10,8 +10,6 @@ import Product from './page/Product/Product';
 
 import Footer from './common/Footer/Footer';
 import NotFound from './page/NotFound/NotFound';
-import Favorite from './page/Favorite/Favorite';
-import Login from './page/Login/Login';
 import SignUp from './page/SignUp/SignUp';
 import Home from './page/Home/Home';
 import ResetPassword from './page/ResetPassword/ResetPassword';
@@ -27,9 +25,7 @@ function App() {
           <Route path='/drinks' element={<Product title='Напитки 🥤' category='drinks' />} />
           <Route path='/desserts' element={<Product title='Дессерты 🍰' category='desserts' />} />
           <Route path='/sausec' element={<Product title='Соусы 🥫' category='sausec' />} />
-          <Route path='/favorite' element={<Favorite />} />
 
-          <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/resetpassword' element={<ResetPassword />} />
 

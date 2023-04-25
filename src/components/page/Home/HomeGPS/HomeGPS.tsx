@@ -1,11 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { ReactComponent as GPSHome } from '../../../../assets/home/gpsHome.svg';
+import Modal from '../../../common/Modal/Modal';
 
 export default function HomeGPS() {
+  const [isShowAddAdress, setIsShowAddAdress] = useState(false);
+
+  const handleClickAddAdress = () => {
+    setIsShowAddAdress(true);
+  };
+
   return (
     <div className='home-gps'>
-      <h2 className='home-title'>Адрес доставки</h2>
+      <div className='home-top'>
+        <h2 className='home-title'>Адрес доставки</h2>
+        <button onClick={handleClickAddAdress} className='home-button__add'>
+          Добавить адрес
+        </button>
+        {isShowAddAdress && (
+          <Modal
+            onClose={() => setIsShowAddAdress(false)}
+            title='Адрес доставки'
+            description='Эта модальное окно находится в разработке'
+            button='Вернуться'
+            onClick={() => setIsShowAddAdress(false)}
+          />
+        )}
+      </div>
       <div className='home-bottom'>
         <div className='home-bottom__card'>
           <div className='home-bottom__left'>
