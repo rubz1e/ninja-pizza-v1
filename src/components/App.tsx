@@ -19,7 +19,6 @@ import { setUser } from '../redux/slices/userSlice';
 
 function App() {
   const dispatch = useAppDispatch();
-
   useEffect(() => {
     const storedUser = localStorage.getItem('userData');
     if (storedUser) {
@@ -28,6 +27,7 @@ function App() {
       return;
     }
   }, [dispatch]);
+
   return (
     <div className='App'>
       <Header />

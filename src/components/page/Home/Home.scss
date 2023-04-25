@@ -1,4 +1,3 @@
-@import '../../../scss/variables';
 @import '../../../scss/components/all';
 
 .home {
@@ -32,9 +31,10 @@
     &__signout {
       @include button;
       width: 300px;
+      background-color: var(--red-grey);
 
       &:hover {
-        background-color: $grayFirst;
+        background-color: var(--red-hover);
       }
     }
 
@@ -43,17 +43,14 @@
       width: 300px;
       gap: 15px;
       justify-content: flex-start;
+      color: var(--text-primary);
 
-      &:hover {
-        background-color: darken($dividerFirst, 2%);
-      }
-
-      &:active {
-        background-color: darken($dividerFirst, 5%);
+      & svg {
+        fill: var(--svg-fill);
       }
 
       &-active {
-        background-color: $yellow;
+        background-color: var(--yellow-40);
       }
     }
 
@@ -61,7 +58,7 @@
       display: flex;
       flex-direction: row;
       padding: 16px;
-      background-color: $white;
+      background-color: var(--background-fh);
       border-radius: 12px;
       justify-content: space-between;
     }
@@ -71,10 +68,10 @@
     @include button;
     max-width: 200px;
     width: 100%;
-    background-color: $primaryGreen;
-    color: $white;
+    background-color: var(--yellow-40);
+    color: var(--background);
     &:hover {
-      background-color: $hoverGreenSecond;
+      background-color: var(--orange);
     }
   }
 
@@ -90,7 +87,7 @@
 
     &__edit {
       border: none;
-      background-color: $dividerThird;
+      background-color: var(--background-hover);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -99,8 +96,12 @@
       cursor: pointer;
       transition: 0.2s ease-in-out;
 
+      svg {
+        fill: var(--text-primary);
+      }
+
       &:hover {
-        background-color: $yellow;
+        background-color: var(--yellow-40);
       }
     }
 
@@ -108,7 +109,7 @@
       font-weight: 900;
       font-size: 18px;
       line-height: 24px;
-      color: $black;
+      color: var(--text-primary);
     }
 
     &__description {
@@ -116,7 +117,7 @@
       font-weight: 400;
       font-size: 14px;
       line-height: 20px;
-      color: $graySecond;
+      color: var(--text-gray);
     }
 
     &__phone {
@@ -124,7 +125,7 @@
       font-weight: 800;
       font-size: 16px;
       line-height: 20px;
-      color: $black;
+      color: var(--text-gray);
     }
   }
 
@@ -136,6 +137,7 @@
   &-title {
     @include fontH1;
     width: 100%;
+    color: var(--text-primary);
   }
 
   &-bottom {
@@ -143,7 +145,7 @@
     &__card {
       border-radius: 24px;
       padding: 40px 300px 40px 80px;
-      background-color: $white;
+      background-color: var(--background-card);
       display: flex;
     }
     &__left {
@@ -157,13 +159,14 @@
         font-size: 32px;
         line-height: 40px;
         max-width: 450px;
+        color: var(--text-primary);
       }
       &-description {
         margin-top: 8px;
         font-weight: 400;
         font-size: 14px;
         line-height: 20px;
-        color: $grayFirst;
+        color: var(--text-gray);
         max-width: 400px;
       }
     }

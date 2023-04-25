@@ -23,6 +23,7 @@
 
   &-name {
     @include fontH1;
+    color: var(--text-primary);
   }
 
   &-content {

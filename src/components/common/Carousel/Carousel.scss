@@ -15,11 +15,11 @@
 .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
-  background-color: $black;
+  background-color: var(--logo);
   margin: 0 8px;
   transition: 0.1s ease-in-out;
   &:hover {
-    background-color: rgba(26, 26, 26, 0.4);
+    background-color: var(--white-80);
   }
 }
 

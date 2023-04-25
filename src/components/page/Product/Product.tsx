@@ -9,11 +9,11 @@ import Sort from '../../common/Sort/Sort';
 import { ProductProps } from '../../../type/productProps';
 import { NinjaPizza } from '../../../type/categoryTypes';
 import ProductCard from '../../common/ProductCard/ProductCard';
-import getCategoryItem from '../../../api/categories/getCategoryItem';
 import Skeleton from '../../common/Skeleton/Skeleton';
 
 import Pagination from '../../common/Pagination/Pagination';
 import { setCategoryId, setCurrentPage } from '../../../redux/slices/filterSlice';
+import getCategoryItems from '../../../api/categories/getCategoryItems';
 
 export default function Product({ title, category }: ProductProps) {
   const [isLoading, setIsLoading] = useState(true);
@@ -37,7 +37,7 @@ export default function Product({ title, category }: ProductProps) {
     setIsLoading(true);
     const fetchData = async () => {
       const filter = 'category';
-      const response = await getCategoryItem(category, filter, isCurrentPage, isCategoryId, isSortType);
+      const response = await getCategoryItems(category, filter, isCurrentPage, isCategoryId, isSortType);
       setIsCategoryList(response.data);
       setIsLoading(false);
     };

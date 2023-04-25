@@ -1,9 +1,9 @@
 import getCategoryList from './getCategoryList';
-import getCategoryItem from './getCategoryItem';
+import getCategoryItems from './getCategoryItems';
 
 const categoryApi = {
   getCategoryList,
-  getCategoryItem,
+  getCategoryItems,
 };
 
 export default categoryApi;

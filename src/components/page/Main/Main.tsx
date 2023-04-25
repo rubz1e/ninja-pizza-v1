@@ -4,8 +4,13 @@ import Carousel from '../../common/Carousel/Carousel';
 import ProductList from '../../common/ProductList/ProductList';
 import MainBanner from './MainBanner/MainBanner';
 import MainInfo from './MainInfo/MainInfo';
+import { useEffect } from 'react';
 
 export default function Main() {
+  useEffect(() => {
+    return window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className='main'>
       <div className='main-slider'>

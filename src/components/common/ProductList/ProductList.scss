@@ -15,6 +15,7 @@
       align-items: center;
       margin: 0 auto;
       @include fontH1;
+      color: var(--text-primary);
     }
     &__wrapper {
       width: 100%;
@@ -37,11 +38,11 @@
       margin: 50px 0;
       @include button;
       background-color: $gray;
-      color: $white;
+      color: var(--background-fh);
 
       &:hover {
         background-color: $yellow;
-        color: $black;
+        color: var(--background);
       }
     }
   }

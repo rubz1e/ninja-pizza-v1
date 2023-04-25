@@ -6,7 +6,7 @@
     width: 100%;
     height: 100%;
     border-radius: 12px;
-    background-color: $white;
+    background-color: var(--background-fh);
     padding: 24px;
     display: flex;
     z-index: 0;
@@ -63,7 +63,7 @@
     }
 
     &__new {
-      background-color: $bgGreen;
+      background-color: #ccf5d5;
       font-size: 14px;
       font-weight: 700;
       padding: 0 8px;
@@ -79,7 +79,7 @@
       & span {
         font-size: 14px;
         font-weight: 700;
-        color: $green;
+        color: #55b30b;
       }
     }
 
@@ -87,7 +87,7 @@
       margin-left: auto;
       width: 56px;
       height: 56px;
-      background-color: $bgTransparentSecond;
+      background-color: var(--white-8);
       border-radius: 50%;
       cursor: pointer;
       display: flex;
@@ -101,9 +101,9 @@
       }
 
       &:hover {
-        background-color: $bgTransparentFirst;
+        background-color: var(--background-hover);
         & svg {
-          fill: $primaryOrange;
+          fill: var(--orange);
         }
       }
     }
@@ -139,27 +139,27 @@
     &__title {
       font-weight: 700;
       font-size: 20px;
-      color: $black;
+      color: var(--text-primary);
       cursor: pointer;
     }
 
     &__consist {
       margin-top: 12px;
-      color: $bgGray;
+      color: var(--text-gray);
       font-size: 14px;
     }
 
     &__weight {
-      color: $yellow;
+      color: var(--orange);
       font-weight: 600;
     }
 
     &__divider {
-      color: $grayFour;
+      color: var(--text-gray);
     }
 
     &__description {
-      color: $grayFour;
+      color: var(--text-gray);
       font-size: 14px;
       font-weight: 500;
     }
@@ -177,11 +177,15 @@
       font-weight: 700;
       display: flex;
       align-items: flex-start;
+
+      & span:first-child {
+        color: var(--text-primary);
+      }
     }
 
     &__currency {
       font-size: 14px;
-      color: $grayThird;
+      color: var(--text-gray);
       margin-left: 4px;
       margin-bottom: 4px;
       display: inline-block;
@@ -189,6 +193,12 @@
 
     &__button {
       @include button;
+      background-color: var(--background-hover);
+      color: var(--text-primary);
+      &:hover {
+        background-color: var(--orange);
+        color: black;
+      }
     }
   }
 }

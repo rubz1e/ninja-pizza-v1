@@ -1,8 +1,8 @@
-@import '../../../scss/variables';
+@import '../../../scss/_var';
 
 .header {
   position: fixed;
-  background: $white;
+  background: var(--background-fh);
   border-radius: 56px;
   left: 4px;
   right: 4px;
@@ -13,23 +13,20 @@
 
   &-wrapper {
     z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    max-width: 1300px;
   }
 
   &-content {
-    display: flex;
     justify-content: space-between;
+    margin: 0 auto;
+    display: flex;
     margin: 12px 0;
     align-items: center;
-    justify-items: center;
   }
 
   &-left {
     height: 100%;
     display: flex;
-    justify-items: center;
     align-items: center;
   }
 
@@ -51,12 +48,12 @@
         font-weight: 700;
         font-size: 16px;
         cursor: pointer;
-        color: $black;
+        color: var(--text-primary);
 
         transition: 0.1s ease-in-out;
 
         &:hover {
-          background-color: $bgTransparentFirst;
+          background-color: var(--background-hover);
         }
       }
     }
@@ -67,11 +64,10 @@
 
     a {
       display: flex;
-    }
-  }
 
-  &-mobile {
-    &__menu {
+      & svg {
+        fill: var(--logo);
+      }
     }
   }
 
@@ -85,9 +81,6 @@
     position: relative;
     width: 100%;
     height: 100%;
-    @media (max-width: 980px) {
-      display: none;
-    }
 
     &__phone {
       display: flex;
@@ -97,12 +90,15 @@
       font-weight: 700;
       font-size: 16px;
       cursor: pointer;
-      color: $black;
       transition: 0.1s ease-in-out;
       gap: 10px;
 
+      p {
+        color: var(--text-primary);
+      }
+
       &:hover {
-        background-color: $bgTransparentFirst;
+        background-color: var(--background-hover);
       }
     }
 
@@ -121,28 +117,32 @@
       transition-property: all;
       height: 55px;
       border-radius: 500px;
-      background-color: $bgTransparentSecond;
-      transition: 0.1s ease-in-out;
+      background-color: var(--black-4);
+      transition: 0.2s ease-in-out;
       &:hover {
-        background-color: $bgTransparentFirst;
+        background-color: var(--background-hover);
       }
       &-avatar {
         border-radius: 50%;
-        border: 1px solid $bgTransparentSecond;
+        border: 1px solid var(--background-fh);
+        transition: 0.2s ease-in-out;
+        &:hover {
+          background-color: var(--red);
+        }
       }
     }
 
     &__cart {
-      background-color: $yellow;
+      background-color: var(--orange);
 
       &:hover {
-        background-color: $yellow;
+        background-color: var(--orange);
       }
     }
   }
 
   svg {
-    fill: $grayFirst;
+    fill: var(--svg-fill);
   }
 
   &-expander {
@@ -161,6 +161,6 @@
   height: 100vh;
   left: 0;
   right: 0;
-  background: $grayFour;
+  background: var(--background-40);
   z-index: 1;
 }

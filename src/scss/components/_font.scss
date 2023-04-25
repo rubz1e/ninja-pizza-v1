@@ -1,13 +1,14 @@
 @import '../variables';
+@import '../var';
 
 @mixin fontH1 {
   font-size: 48px;
-  color: $black;
+  color: var(--black);
   font-weight: 800;
 }
 
 @mixin fontH2 {
   font-size: 34px;
-  color: $black;
+  color: var(--black);
   font-weight: 700;
 }

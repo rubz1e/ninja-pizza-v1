@@ -16,21 +16,21 @@
       justify-content: center;
       align-items: center;
       height: 40px;
-      color: $primaryOrange;
-      border: 1px solid $primaryOrange;
+      color: var(--yellow-40);
+      border: 1px solid var(--yellow-40);
       border-radius: 50%;
       transition: 0.2s ease-in-out;
 
       &:hover {
         color: $white;
-        background-color: $primaryOrange;
+        background-color: var(--yellow-40);
       }
     }
   }
   .selected {
     a {
       color: $white;
-      background-color: $primaryOrange;
+      background-color: var(--yellow-40);
     }
   }
 }

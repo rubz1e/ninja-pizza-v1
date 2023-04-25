@@ -5,7 +5,7 @@
     display: flex;
 
     li {
-      background-color: #f9f9f9;
+      background-color: var(--background-fh);
       display: flex;
       align-items: center;
       padding: 13px 25px;
@@ -15,21 +15,23 @@
       cursor: pointer;
       transition: background-color 0.1s ease-in-out;
       gap: 10px;
-      border: 1px solid #f9f9f9;
+      border: 1px solid var(--background-fh);
+
+      & p {
+        color: var(--text-primary);
+      }
 
       &:hover {
-        background-color: darken(#f9f9f9, 2%);
-        border: 1px solid darken(#f9f9f9, 2%);
+        background-color: var(--yellow-40);
       }
 
       &:active {
-        background-color: darken(#f9f9f9, 5%);
-        border: 1px solid darken(#f9f9f9, 5%);
+        background-color: var(--yellow-40);
       }
 
       &.active {
-        background-color: $white;
-        color: #fff;
+        background-color: var(--background-fh);
+        color: var(--text-primary);
         border: 1px solid #ff6633;
       }
 

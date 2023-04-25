@@ -2,6 +2,7 @@
 @import '../../../scss/components/all';
 
 .notfound {
+  margin: 55px;
   &-wrapper {
     max-width: 420px;
     margin: 0 auto;
@@ -16,12 +17,13 @@
   &-title {
     @include fontH2;
     margin-top: 5px;
+    color: var(--text-primary);
   }
   &-description {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    color: $graySecond;
+    color: var(--text-gray);
     margin-top: 20px;
     max-width: 340px;
     text-align: center;
@@ -31,11 +33,11 @@
     max-width: 340px;
     margin-top: 32px;
     @include button;
-    background-color: $primaryGreen;
+    background-color: var(--red);
     color: $white;
 
     &:hover {
-      background-color: $hoverGreenSecond;
+      background-color: var(--red-hover);
     }
   }
 }

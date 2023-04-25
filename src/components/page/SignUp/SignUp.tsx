@@ -43,7 +43,6 @@ export default function SignUp() {
             <Form title='Зарегистрироваться' handleClick={handleRegister} />
           </div>
           <div className='signup-bottom'>
-            <hr className='signup-divider' />
             <button onClick={handleLoginClick} className='signup-bottom__register'>
               Авторизация
             </button>

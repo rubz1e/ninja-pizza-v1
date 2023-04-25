@@ -1,11 +1,12 @@
 @import 'fonts';
 @import 'variables';
 @import 'libs/normalize';
-
 @import 'components/all';
+@import './var';
 
 body {
-  background-color: $background;
+  background-color: var(--background);
+  transition: all 0.3s ease-in-out;
 }
 
 .wrapper {

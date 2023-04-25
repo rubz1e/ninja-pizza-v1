@@ -41,7 +41,7 @@ function ResetPassword() {
           <button className='form-button' type='button' onClick={triggerResetEmail}>
             Сбросить пароль
           </button>
-          <hr className='reset-divider' />
+
           <button onClick={handleLoginClick} className='reset-button__login'>
             Авторизоваться
           </button>

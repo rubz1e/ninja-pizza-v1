@@ -8,15 +8,15 @@
   justify-content: center;
   border: none;
   border-radius: 16px;
-  background: $bgTransparentSecond;
-  color: $black;
+  background: var(--black-4);
+  color: var(--black);
   cursor: pointer;
   transition: 0.2s ease;
   font-weight: 700;
   font-size: 16px;
 
   &:hover {
-    background-color: $yellow;
+    background-color: var(--yellow-40);
   }
 }
 
@@ -25,10 +25,8 @@
     &__button {
       @include button;
       gap: 5px;
-      background-color: $bgTransparentSecond;
-
-      & svg {
-        fill: $black;
+      background-color: var(--button-transparent) svg {
+        fill: var(--black);
       }
     }
   }

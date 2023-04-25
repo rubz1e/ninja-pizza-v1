@@ -4,11 +4,11 @@
 .expander {
   padding: 24px;
   width: 300px;
-  background-color: $white;
+  background-color: var(--background-fh);
   border-radius: 24px;
 
   &-description {
-    color: $grayModal;
+    color: var(--text-gray);
     margin-bottom: 16px;
     font-size: 14px;
   }

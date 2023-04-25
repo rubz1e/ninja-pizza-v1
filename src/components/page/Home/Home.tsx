@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useAppDispatch } from '../../../hooks/redux-hooks';
 import { useAuth } from '../../../hooks/useAuth';
-import { removeUser } from '../../../redux/slices/userSlice';
-import { Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { removeUser, setUser } from '../../../redux/slices/userSlice';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import './Home.scss';
 
@@ -11,8 +11,8 @@ import { ReactComponent as Heart } from '../../../assets/home/heart.svg';
 import { ReactComponent as GPS } from '../../../assets/home/gps.svg';
 import { ReactComponent as Theme } from '../../../assets/home/themeSite.svg';
 import { ReactComponent as Stroke } from '../../../assets/home/stroke.svg';
+import { ReactComponent as Ninja } from '../../../assets/Ninja.svg';
 
-import Avatar from '../../../assets/home/avatar.png';
 import HomeOrders from './HomeOrders/HomeOrders';
 import HomeFavorite from './HomeFavorite/HomeFavorite';
 import HomeGPS from './HomeGPS/HomeGPS';
@@ -21,7 +21,7 @@ import Modal from '../../common/Modal/Modal';
 export default function Home() {
   const location = useLocation();
   const [activeTab, setActiveTab] = useState(0);
-  const { isAuth, email } = useAuth();
+  const { email } = useAuth();
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const [isShowSaveModal, setIsShowSaveModal] = useState(false);
@@ -34,6 +34,15 @@ export default function Home() {
   const handleClickLogout = () => {
     setIsShowLogoutModal(true);
   };
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem('userData');
+    if (storedUser) {
+      const user = JSON.parse(storedUser);
+      dispatch(setUser(user));
+      return;
+    }
+  }, [dispatch]);
 
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
@@ -50,11 +59,9 @@ export default function Home() {
   const signOut = () => {
     dispatch(removeUser());
     localStorage.removeItem('userData');
-    localStorage.removeItem('profile');
     navigate('/');
   };
-
-  return isAuth ? (
+  return (
     <div className='home'>
       <div className='home-wrapper'>
         <div className='home-content'>
@@ -84,12 +91,12 @@ export default function Home() {
                 </li>
                 <button className={'home-tab__button'}>
                   <Theme width='24' height='24' />
-                  Тема сайта
+                  Сменить тему
                 </button>
                 <div className='home-tab__profile'>
                   <div className='home-profile__left'>
                     <div className='home-profile__avatar'>
-                      <img src={Avatar} alt='' />
+                      <Ninja />
                     </div>
                   </div>
                   <div className='home-profile__right'>
@@ -136,7 +143,5 @@ export default function Home() {
         </div>
       </div>
     </div>
-  ) : (
-    <>{!isAuth && <Navigate to='/login' />}</>
   );
 }

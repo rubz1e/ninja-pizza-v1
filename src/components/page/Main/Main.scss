@@ -27,7 +27,7 @@
     &__description {
       max-width: 545px;
       margin-top: 24px;
-      color: $black;
+      color: var(--black);
       font-weight: 500;
     }
   }
@@ -39,19 +39,17 @@
     padding: 100px 15px;
     margin: 0 auto;
     h2 {
-      color: $graySecond;
-      font-size: 24px;
-      line-height: 120%;
-      font-weight: 700;
+      @include fontH2;
+      color: var(--text-primary);
     }
     p,
     li {
-      color: $grayThird;
+      color: var(--text-gray);
       font-size: 12px;
     }
     h3 {
       font-size: 18px;
-      color: $graySecond;
+      color: var(--text-gray);
       font-weight: 700;
       line-height: 120%;
     }

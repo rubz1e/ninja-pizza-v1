@@ -11,7 +11,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $grayFour;
+    background-color: var(--black-40);
     z-index: 999;
   }
   &-window {
@@ -24,7 +24,7 @@
     align-items: center;
     flex-direction: column;
     z-index: 1000;
-    background: $white;
+    background: var(--background-fh);
     padding: 40px;
     border-radius: 24px;
     position: relative;
@@ -39,9 +39,14 @@
     cursor: pointer;
     z-index: 2;
     padding: 6px;
-    background-color: $bgInput;
+    background-color: var(--text-gray);
     border-radius: 8px;
     transition: 0.2s ease-in-out;
+
+    & svg {
+      fill: #333333;
+    }
+
     &:hover {
       background-color: $red;
     }
@@ -55,33 +60,35 @@
   &-title {
     font-size: 24px;
     text-align: center;
-    color: black;
+    color: var(--text-primary);
   }
   &-description {
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
     margin-top: 8px;
+    color: var(--text-gray);
+    margin-bottom: 14px;
   }
   &-button {
     &__save {
       margin-top: 16px;
       @include button;
-      background-color: $primaryGreen;
+      background-color: var(--yellow-hover);
       color: $white;
       width: 100%;
       &:hover {
-        background-color: $hoverGreenSecond;
+        background-color: var(--yellow);
       }
     }
     &__close {
       margin-top: 8px;
       @include button;
-      background-color: $bgInput;
-      color: $green;
+      background-color: var(--red-grey);
+      color: #333333;
       width: 100%;
       &:hover {
-        background-color: $bgTransparentFirst;
+        background-color: var(--red-24);
       }
     }
   }
