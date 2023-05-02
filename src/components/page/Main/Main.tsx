@@ -23,7 +23,7 @@ export default function Main() {
           <ProductList id="1" title={`${t.main.pizza} 🍕`} category="pizza" />
           <ProductList id="2" title={`${t.main.drinks} 🥤`} category="drinks" />
           <ProductList id="3" title={`${t.main.desserts} 🍰`} category="desserts" />
-          <ProductList id="4" title={`${t.main.sauces} 🥫`} category="sausec" />
+          <ProductList id="4" title={`${t.main.sausec} 🥫`} category="sausec" />
         </div>
         <div className="main-banner">
           <MainBanner />

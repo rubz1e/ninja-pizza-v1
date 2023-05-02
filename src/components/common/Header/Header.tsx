@@ -59,7 +59,7 @@ export default function Header() {
               <div className="header-navigation">
                 <ul className="nav-item">
                   <li className="nav-item__list">
-                    <Link to="/">{t.header.links.about}</Link>
+                    <Link to="/">{t.header.links.main}</Link>
                   </li>
                   <li className="nav-item__list">
                     <Link to="/menu">{t.header.links.delivery}</Link>
