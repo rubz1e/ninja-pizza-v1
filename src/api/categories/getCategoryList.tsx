@@ -3,7 +3,7 @@ import { NinjaPizza, CategoryType, CategoryFilterType } from '../../type/categor
 
 const getCategoryList = async (element: CategoryType, filter: CategoryFilterType) => {
   await new Promise((resolve) => setTimeout(resolve, 0));
-  const URL_API = `http://localhost:3001/${element}`;
+  const URL_API = `https://ninja-food-db.vercel.app/${element}`;
   const defaultParams = {
     _sort: filter.sortField,
     _order: filter.sortDir,
