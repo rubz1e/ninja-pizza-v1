@@ -1,0 +1,44 @@
+{
+  "header": {
+    "links": {
+      "main": "Главная",
+      "delivery": "Доставка",
+      "about": "О нас",
+      "news": "Новости"
+    },
+    "button": {
+      "language": "Eng",
+      "modal": "Для просмотра выбранных товаров вам нужно авторизоваться"
+    }
+  },
+  "main": {
+    "pizza": "Пицца",
+    "drinks": "Напитки",
+    "desserts": "Дессерты",
+    "sausec": "Соусы",
+    "button": "Смотреть все"
+  },
+  "account": {
+    "orderHistoryTitle": "История заказов",
+    "orderHistoryCardTitle": "У вас нет заказов",
+    "orderHistoryCardDescription": "Переходите в интересующую вас категорию и сделайте свой первый заказ",
+    "selectedProductsTitle": "Избранные товары",
+    "selectedProductsCardTitle": "Вы еще ничего не добавили в избанное",
+    "selectedProductsDescription": "Переходите в интересующую вас категорию и отмечайте понравившиеся",
+    "shippingAddressTitle": "Адрес доставки",
+    "shippingAddressCardTitle": "У вас нет сохраненных адресов",
+    "shippingAddressCardButton": "Добавить адрес",
+    "shippingAddressDescription": "Переходите в интересующую вас категорию и сделайте свой первый заказ и адрес сохранится автоматически.",
+    "changeTheme": "Сменить тему на",
+    "dark": "темную",
+    "light": "светлую",
+    "logout": "Выйти",
+    "profileCard": "В разработке"
+  },
+  "notFound": {
+    "titleFirst": "Ошибка 404",
+    "titleSecond": "Что-то пошло не так",
+    "description": "Страница, которую вы ищите, отсутствует либо на стадии разработки",
+    "button": "Вернуться на главную"
+  }
+}

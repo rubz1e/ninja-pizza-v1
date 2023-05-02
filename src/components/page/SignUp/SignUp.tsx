@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useAppDispatch } from '../../../hooks/redux-hooks';
+import { useAppDispatch } from '../../../hooks/useRedux';
 import { setUser } from '../../../redux/slices/userSlice';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { Form } from '../../common/Form/Form';
@@ -21,7 +21,7 @@ export default function SignUp() {
   const handleRegister = (email: string, password: string) => {
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
-      .then(({ user }) => {
+      .then(async ({ user }) => {
         dispatch(
           setUser({
             email: user.email,
@@ -33,17 +33,17 @@ export default function SignUp() {
       .catch();
   };
   return (
-    <div className='signup'>
-      <div className='signup-wrapper'>
-        <div className='signup-content'>
-          <div className='signup-top'>
-            <h3 className='signup-top__title'>Регистрация</h3>
+    <div className="signup">
+      <div className="signup-wrapper">
+        <div className="signup-content">
+          <div className="signup-top">
+            <h3 className="signup-top__title">Регистрация</h3>
           </div>
-          <div className='signup-form'>
-            <Form title='Зарегистрироваться' handleClick={handleRegister} />
+          <div className="signup-form">
+            <Form title="Зарегистрироваться" handleClick={handleRegister} />
           </div>
-          <div className='signup-bottom'>
-            <button onClick={handleLoginClick} className='signup-bottom__register'>
+          <div className="signup-bottom">
+            <button onClick={handleLoginClick} className="signup-bottom__register">
               Авторизация
             </button>
             {isShowModal && <AuthModal onClose={handleClose} />}

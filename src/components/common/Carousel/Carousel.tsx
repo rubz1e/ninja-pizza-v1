@@ -4,9 +4,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-
 import './Carousel.scss';
 
 import News from '../../../assets/banners/slider_wakeup.webp';
@@ -29,7 +26,7 @@ export default function Carousel() {
   ];
 
   return (
-    <div className='slider'>
+    <div className="slider">
       <Swiper
         slidesPerView={1}
         freeMode
@@ -38,7 +35,7 @@ export default function Carousel() {
           clickable: true,
         }}
         modules={[Pagination]}
-        className='swiper-container'
+        className="swiper-container"
         breakpoints={{
           320: { slidesPerView: 1, spaceBetween: 80 },
           480: { slidesPerView: 1, spaceBetween: 150 },
@@ -49,7 +46,7 @@ export default function Carousel() {
       >
         {data.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className='slider-image'>
+            <div className="slider-image">
               <img src={slide.img} alt={slide.img} />
             </div>
           </SwiperSlide>

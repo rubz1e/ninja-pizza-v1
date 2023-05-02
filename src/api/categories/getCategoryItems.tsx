@@ -14,7 +14,7 @@ const getCategoryItems = async (
   const orderBy = isSortType.sortField.replace('-', '');
   const order = isSortType.sortField.includes('-') ? 'asc' : 'desc';
 
-  const URL_API = `https://ninja-food-db.vercel.app/${type}?${categoryBy}&_sort=${orderBy}&_order=${order}&_page=${isCurrentPage}&_limit=8?`;
+  const URL_API = `http://localhost:3001/${type}?${categoryBy}&_sort=${orderBy}&_order=${order}`;
   return axios<NinjaPizza[]>({
     method: 'GET',
     url: URL_API,

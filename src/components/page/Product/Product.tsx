@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { SetStateAction, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import './Product.scss';
@@ -18,7 +18,7 @@ import getCategoryItems from '../../../api/categories/getCategoryItems';
 export default function Product({ title, category }: ProductProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [isCategoryList, setIsCategoryList] = useState<NinjaPizza[]>([]);
-
+  const [totalPages, setTotalPages] = useState<number>(0);
   const { isCategoryId, isCurrentPage, isSortType } = useSelector((state: unknown) => (state as any).filter);
   const dispatch = useDispatch();
 
@@ -40,27 +40,36 @@ export default function Product({ title, category }: ProductProps) {
       const response = await getCategoryItems(category, filter, isCurrentPage, isCategoryId, isSortType);
       setIsCategoryList(response.data);
       setIsLoading(false);
+
+      const PAGE_SIZE = 8;
+      const totalItems = response.data.length;
+      const totalPages = Math.ceil(totalItems / PAGE_SIZE);
+      console.log(totalPages, totalItems);
+      setTotalPages(totalPages);
+      if (totalPages < isCurrentPage) {
+        dispatch(setCurrentPage(3));
+      }
     };
     fetchData();
-  }, [isSortType, isCategoryId, category, isCurrentPage]);
+  }, [isSortType, isCategoryId, category, isCurrentPage, dispatch]);
 
   return (
-    <div className='category'>
-      <div className='category-wrapper'>
-        <div className='category-top'>
-          <div className='category-title'>
-            <h2 className='category-name'>{title}</h2>
+    <div className="category">
+      <div className="category-wrapper">
+        <div className="category-top">
+          <div className="category-title">
+            <h2 className="category-name">{title}</h2>
           </div>
         </div>
-        <div className='category-content'>
-          <div className='category-options'>
+        <div className="category-content">
+          <div className="category-options">
             {category === 'pizza' && (
               <Categories categoryName={isCategoryId} onClickCategory={(i) => onClickCategory(i)} />
             )}
             <Sort />
           </div>
-          <div className='category-list'>{isLoading ? skeletonList : productList}</div>
-          <Pagination currentPage={isCurrentPage} onChangePage={onChangePage} />
+          <div className="category-list">{isLoading ? skeletonList : productList}</div>
+          <Pagination totalPages={totalPages} currentPage={isCurrentPage} onChangePage={onChangePage} />
         </div>
       </div>
     </div>

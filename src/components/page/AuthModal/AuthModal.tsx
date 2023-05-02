@@ -4,7 +4,7 @@ import './AuthModal.scss';
 import { ReactComponent as CloseModal } from '../../../assets/closeModal.svg';
 
 import { ReactComponent as Google } from '../../../assets/icons8-google.svg';
-import { useAppDispatch } from '../../../hooks/redux-hooks';
+import { useAppDispatch } from '../../../hooks/useRedux';
 import { Link, useNavigate } from 'react-router-dom';
 import { GoogleAuthProvider, User, getAuth, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { setUser } from '../../../redux/slices/userSlice';
@@ -56,37 +56,37 @@ export default function AuthModal({ onClose }: AuthModalProps) {
   };
 
   return (
-    <div className='auth-backdrop'>
-      <div className='auth-overlay'>
-        <div className='auth-container'>
-          <div className='auth-wrapper'>
-            <div className='auth-window'>
-              <div className='auth-content'>
-                <div className='auth-close' onClick={handleClose}>
-                  <CloseModal width='20' height='20' />
+    <div className="auth-backdrop">
+      <div className="auth-overlay">
+        <div className="auth-container">
+          <div className="auth-wrapper">
+            <div className="auth-window">
+              <div className="auth-content">
+                <div className="auth-close" onClick={handleClose}>
+                  <CloseModal width="20" height="20" />
                 </div>
-                <div className='auth-top'>
-                  <h3 className='auth-title'>Авторизация</h3>
-                  <div className='auth-description'>Вход в аккаунт</div>
+                <div className="auth-top">
+                  <h3 className="auth-title">Авторизация</h3>
+                  <div className="auth-description">Вход в аккаунт</div>
                 </div>
-                <div className='auth-middle'>
-                  <Form title='Вход по почте' handleClick={handleLogin} />
-                  <hr className='auth-middle__another' />
-                  <button onClick={() => handleLoginGoogle()} className='auth-middle__button'>
-                    <Google className='auth-middle__icon' width='30' height='30' />
+                <div className="auth-middle">
+                  <Form title="Вход по почте" handleClick={handleLogin} />
+                  <hr className="auth-middle__another" />
+                  <button onClick={() => handleLoginGoogle()} className="auth-middle__button">
+                    <Google className="auth-middle__icon" width="30" height="30" />
                     Продолжить с Google
                   </button>
                 </div>
-                <div className='auth-bottom'>
-                  <p className='auth-middle__description'>
+                <div className="auth-bottom">
+                  <p className="auth-middle__description">
                     Забыли пароль?
-                    <Link to='/resetpassword' onClick={onClose} className='auth-bottom__link'>
+                    <Link to="/resetpassword" onClick={onClose} className="auth-bottom__link">
                       Восстановить
                     </Link>
                   </p>
-                  <p className='auth-bottom__description'>
+                  <p className="auth-bottom__description">
                     Нет аккаунта?
-                    <Link to='/signup' onClick={onClose} className='auth-bottom__link'>
+                    <Link to="/signup" onClick={onClose} className="auth-bottom__link">
                       Регистрация
                     </Link>
                   </p>

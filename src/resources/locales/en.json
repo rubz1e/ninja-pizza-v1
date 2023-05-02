@@ -1,0 +1,44 @@
+{
+  "header": {
+    "links": {
+      "main": "Main",
+      "delivery": "Delivery",
+      "about": "About us",
+      "news": "News"
+    },
+    "button": {
+      "language": "Ru",
+      "modal": "To view the selected products you need to log in"
+    }
+  },
+  "main": {
+    "pizza": "Pizza",
+    "drinks": "Drinks",
+    "desserts": "Desserts",
+    "sauces": "Sauces",
+    "button": "See all"
+  },
+  "account": {
+    "orderHistoryTitle": "Order history",
+    "orderHistoryCardTitle": "You have no orders",
+    "orderHistoryCardDescription": "Go to the category you are interested in and place your first order.",
+    "selectedProductsTitle": "Selected products",
+    "selectedProductsCardTitle": "You haven't added anything to your favorites yet.",
+    "selectedProductsDescription": "Go to the category you're interested in and mark your favorites.",
+    "shippingAddressTitle": "Shipping address",
+    "shippingAddressCardTitle": "You have no saved addresses",
+    "shippingAddressCardButton": "Add Address",
+    "shippingAddressDescription": "Go to the category you are interested in and place your first order and the address will be saved automatically.",
+    "changeTheme": "Change Theme to",
+    "dark": "dark",
+    "light": "light",
+    "logout": "Logout",
+    "profileCard": "In development."
+  },
+  "notFound": {
+    "titleFirst": "404 error",
+    "titleSecond": "Something went wrong",
+    "description": "The page you are looking for is missing or under development.",
+    "button": "Return to home"
+  }
+}

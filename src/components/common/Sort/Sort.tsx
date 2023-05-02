@@ -38,17 +38,17 @@ export default function Sort() {
   }, [isOpen]);
 
   return (
-    <div ref={sortRef} className='sort'>
-      <div className='sort-wrapper'>
-        <div className='sort-label'>
+    <div ref={sortRef} className="sort">
+      <div className="sort-wrapper">
+        <div className="sort-label">
           <Arrow />
           <b>Сортировка по: </b>
-          <div className='sort-label_name' onClick={() => setIsOpen(!false)}>
-            <span className='sort-open'>{sort.name}</span>
+          <div className="sort-label_name" onClick={() => setIsOpen(!false)}>
+            <span className="sort-open">{sort.name}</span>
           </div>
         </div>
         {isOpen && (
-          <div className='sort-popup'>
+          <div className="sort-popup">
             <ul>
               {categories.map((obj, index) => (
                 <li

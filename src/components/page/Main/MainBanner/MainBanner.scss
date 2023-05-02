@@ -10,6 +10,9 @@
     display: flex;
     height: 420px;
     z-index: 0;
+    @media (max-width: 360px) {
+      display: none;
+    }
     &__content {
       padding: 0 88px;
       display: flex;

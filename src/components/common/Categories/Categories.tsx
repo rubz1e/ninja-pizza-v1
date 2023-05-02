@@ -23,7 +23,7 @@ export default function Categories({ categoryName, onClickCategory }: Categories
   ];
 
   return (
-    <div className='categories'>
+    <div className="categories">
       <ul>
         {categories.map((category, i) => (
           <li key={i} onClick={() => onClickCategory(i)} className={categoryName === i ? 'active' : ''}>
