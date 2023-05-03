@@ -18,7 +18,6 @@ import getCategoryItems from '../../../api/categories/getCategoryItems';
 export default function Product({ title, category }: ProductProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [isCategoryList, setIsCategoryList] = useState<NinjaPizza[]>([]);
-  const [totalPages, setTotalPages] = useState<number>(0);
   const { isCategoryId, isCurrentPage, isSortType } = useSelector((state: unknown) => (state as any).filter);
   const dispatch = useDispatch();
 
@@ -40,15 +39,6 @@ export default function Product({ title, category }: ProductProps) {
       const response = await getCategoryItems(category, filter, isCurrentPage, isCategoryId, isSortType);
       setIsCategoryList(response.data);
       setIsLoading(false);
-
-      const PAGE_SIZE = 8;
-      const totalItems = response.data.length;
-      const totalPages = Math.ceil(totalItems / PAGE_SIZE);
-      console.log(totalPages, totalItems);
-      setTotalPages(totalPages);
-      if (totalPages < isCurrentPage) {
-        dispatch(setCurrentPage(3));
-      }
     };
     fetchData();
   }, [isSortType, isCategoryId, category, isCurrentPage, dispatch]);
@@ -69,7 +59,7 @@ export default function Product({ title, category }: ProductProps) {
             <Sort />
           </div>
           <div className="category-list">{isLoading ? skeletonList : productList}</div>
-          <Pagination totalPages={totalPages} currentPage={isCurrentPage} onChangePage={onChangePage} />
+          <Pagination currentPage={isCurrentPage} onChangePage={onChangePage} />
         </div>
       </div>
     </div>
