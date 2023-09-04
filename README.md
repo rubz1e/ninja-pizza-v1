@@ -1,3 +1,5 @@
+# Development suspended \ Not supported
+
 # Ninja Pizza
 
 ## Installation
